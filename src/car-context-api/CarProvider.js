@@ -1,19 +1,10 @@
-import { useState, useEffect } from "react";
-// import { getUser } from "./auth.js";
+import { useState} from "react";
+import { allCars } from "./car-info";
 import CarContext from "./context/CarContext";
 
 export const CarProvider = ({ children }) => {
 
-  const [cars, setCars] = useState(null);
+  const [cars, setCars] = useState(allCars);
 
-  const getCars = async () => {}
-
-
-  useEffect(() => {
-    const currentCars = getCars();
-    setCars(currentCars);
-  }, []);
-
-
-  return <CarContext.Provider value={{ cars }}>{children}</CarContext.Provider>;
+  return <CarContext.Provider value={[cars, setCars]}>{children}</CarContext.Provider>;
 };

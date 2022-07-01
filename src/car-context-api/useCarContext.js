@@ -1,11 +1,11 @@
 import CarContext from "./CarContext";
 
 const useCarContext = () => {
-  const car = CarContext();
-  if (car === undefined) {
+  const cars = CarContext();
+  if (cars === undefined) {
     throw new Error("useCarContext can only be used inside CarProvider");
   }
-  return car;
+  return cars;
 };
 
 export default useCarContext;
