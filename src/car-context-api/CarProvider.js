@@ -1,6 +1,6 @@
 import { useState} from "react";
 import { allCars } from "./car-info";
-import CarContext from "./context/CarContext";
+import CarContext from "./CarContext";
 
 export const CarProvider = ({ children }) => {
 

@@ -1,11 +1,13 @@
 import "./App.css";
-import CarRentals from "./CarRentals";
+import Home from "./Home.tsx";
 
 function App() {
   return (
-    <>
-      <CarRentals />
-    </>
+    <div className="App">
+      <header className="App-header">
+        <Home />
+      </header>
+    </div>
   );
 }
 
