@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import CarContext from "./car-context-api/CarContext";
+import { CarCard } from "./components";
 // import logo from "./logo.svg";
 
 // import { Navigate } from "react-router-dom";
