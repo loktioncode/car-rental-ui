@@ -4,16 +4,16 @@ import CarContext from "./context/CarContext";
 
 export const CarProvider = ({ children }) => {
 
-  const [car, setCar] = useState(null);
+  const [cars, setCars] = useState(null);
 
   const getCars = async () => {}
 
 
   useEffect(() => {
     const currentCars = getCars();
-    setCar(currentCars);
+    setCars(currentCars);
   }, []);
 
 
-  return <CarContext.Provider value={{ car }}>{children}</CarContext.Provider>;
+  return <CarContext.Provider value={{ cars }}>{children}</CarContext.Provider>;
 };

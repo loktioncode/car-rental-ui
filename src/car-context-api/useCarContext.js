@@ -7,3 +7,5 @@ const useCarContext = () => {
   }
   return car;
 };
+
+export default useCarContext;
