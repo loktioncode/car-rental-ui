@@ -15,6 +15,7 @@ function Home() {
   return (
     <>
       <h1 className="text-3xl font-bold underline">Car rentals show here!</h1>
+      <CarCard />
     </>
   );
 }
