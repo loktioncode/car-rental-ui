@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# React UI for Car Rental
+## take home test for FrontEnd Engineer Role
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
