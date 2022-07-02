@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import CarContext from "./car-context-api/CarContext";
 // import { CarCard } from "./components";
 import { DisplayCars } from "./components";
-import { CarFilter } from "./components";
 // import logo from "./logo.svg";
 // import { Navigate } from "react-router-dom";
 import { updateResponseKeyString } from "./components/utils.js";
@@ -17,6 +16,8 @@ function Home() {
 
 
   var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
+  var availableCarsToRent = cars[0].VehAvailRSCore.VehVendorAvails;
+
 
   const newPickUpTimeData = updateResponseKeyString(pickUpTimeData);
   console.log(newPickUpTimeData);
@@ -99,10 +100,8 @@ function Home() {
                   className="object-cover w-70 h-70 rounded-md xl:col-span-2 dark:bg-coolGray-500"
                 ></img>
               </section>
-              <section>
-                <CarFilter />
-              </section>
-              <DisplayCars />
+              
+              <DisplayCars allCars={availableCarsToRent} />
             </div>
           </main>
           <footer>
