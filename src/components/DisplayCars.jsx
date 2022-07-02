@@ -8,13 +8,6 @@ const DisplayCars = (props) => {
   var availableCarsToRent = [];
   var availableCarsToRentInfo = [];
 
-  const availableCarsToRentFiltered = availableCarsToRentInfo.filter(car => {
-    let carCosts = updateResponseKeyString(car.TotalCharge);
-    // return carCosts.sort((a, b) => a - b)
-    return carCosts;
-
-  });
-
   for (var car in allCars) {
     availableVendors.push(updateResponseKeyString(allCars[car].Vendor));
     availableCarsToRent.push(allCars[car].VehAvails);
@@ -31,12 +24,16 @@ const DisplayCars = (props) => {
     }
   }
 
-  console.log("rentals>>", availableCarsToRentInfo);
-  if (availableCarsToRentFiltered.length !== 0) {
-    console.log("filtered>>", availableCarsToRentFiltered);
-    
-  }
+  if (availableCarsToRentInfo.length !== 0) {
+    availableCarsToRentInfo.sort(function (a, b) {
+      return (
+        parseInt(updateResponseKeyString(a.TotalCharge).EstimatedTotalAmount) -
+        parseInt(updateResponseKeyString(b.TotalCharge).EstimatedTotalAmount)
+      );
+    });
 
+    console.log("sorted rentals desc order >>", availableCarsToRentInfo);
+  }
 
   return (
     <>
@@ -56,17 +53,18 @@ const DisplayCars = (props) => {
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* our grid sits in here */}
-
-            
-
-            {availableCarsToRentInfo.map((car) => (
-              <CarCard
-                key={updateResponseKeyString(car.Vehicle).Code}
-                carInfo={updateResponseKeyString(car.Vehicle)}
-                carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
-                carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-              />
-            ))}
+            {availableCarsToRentInfo.length !== 0 ? (
+              availableCarsToRentInfo.map((car) => (
+                <CarCard
+                  key={updateResponseKeyString(car.Vehicle).Code}
+                  carInfo={updateResponseKeyString(car.Vehicle)}
+                  carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
+                  carTotalCharges={updateResponseKeyString(car.TotalCharge)}
+                />
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </div>
           <div className="flex justify-center">
             <button
