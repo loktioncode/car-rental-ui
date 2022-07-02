@@ -1,9 +1,9 @@
 
 
-const CarCard = () => {
+const CarCard = (props: any) => {
   return (
     <>
-      <p>Car 1</p>
+      <p>Car Card component loaded !!!{props.cars}</p>
     </>
   );
 }
