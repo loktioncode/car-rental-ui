@@ -1,9 +1,8 @@
 import React from "react";
 import { DisplayCars } from "./components";
-import { updateResponseKeyString } from "./components/utils.js";
 
 function Home(props) {
-  var allCars = props.allCars;
+  // var allCars = props.allCars;
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
