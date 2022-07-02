@@ -1,5 +1,5 @@
 import React from "react";
-import { DisplayCars } from "./components";
+import { DisplayCars } from "../components";
 
 function Home(props) {
   // var allCars = props.allCars;

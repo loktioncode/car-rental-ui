@@ -1,6 +1,6 @@
 import "./App.css";
-import Home from "./Home";
-import CarDetail from "./CarDetail";
+import Home from "./pages/Home";
+import CarDetail from "./pages/CarDetail";
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar, Footer } from "./components";
