@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { allCars } from "./car-info";
 import CarContext from "./CarContext";
 
@@ -22,10 +22,10 @@ export const CarProvider = ({ children }) => {
 
  
 
-  useEffect(() => {
-    // const allCars = getCars();
-    setCars(allCars);
-  }, []);
+  // useEffect(() => {
+  //   const allCars = getCars();
+  //   setCars(allCars);
+  // }, []);
 
   return (
     <CarContext.Provider value={[cars, setCars]}>

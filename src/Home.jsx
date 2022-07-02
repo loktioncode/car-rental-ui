@@ -1,27 +1,19 @@
-import React, { useContext } from "react";
-import CarContext from "./car-context-api/CarContext";
-// import { CarCard } from "./components";
+import React from "react";
 import { DisplayCars } from "./components";
-// import logo from "./logo.svg";
 import { updateResponseKeyString } from "./components/utils.js";
 
-function Home() {
-  const [cars] = useContext(CarContext);
+function Home(props) {
+  var allCars = props.allCars;
 
-  if (!cars) {
-    alert("no cars to rent !!");
-    // return <Navigate replace to="/login" />;
-  }
-
-  var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
-  var availableCarsToRent = cars[0].VehAvailRSCore.VehVendorAvails;
-
-  const newPickUpTimeData = updateResponseKeyString(pickUpTimeData);
-  console.log(newPickUpTimeData);
+  var availableVendors = props.availableVendors;
+  var availableCarsToRentInfo = props.availableCarsToRentInfo;
 
   return (
     <div className="container mx-auto space-y-16">
-      <DisplayCars allCars={availableCarsToRent} />
+      <DisplayCars
+        availableCarsToRentInfo={availableCarsToRentInfo}
+        availableVendors={availableVendors}
+      />
     </div>
   );
 }

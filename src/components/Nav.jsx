@@ -8,7 +8,7 @@ const NavBar = (props) => {
           <header className="container flex items-center justify-between h-16 px-4 mx-auto rounded dark:bg-Gray-900">
             <a
               rel="noopener noreferrer"
-              href="https://mam.com/business"
+              href="/"
               aria-label="Homepage"
             >
               <svg
