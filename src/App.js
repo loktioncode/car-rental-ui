@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar, Footer } from "./components";
 import CarContext from "./car-context-api/CarContext";
-import { updateResponseKeyString } from "./components/utils.js";
+import { updateResponseKeyString } from "./helpers/utils.js";
 
 function App() {
   const [cars] = useContext(CarContext);

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { updateResponseKeyString } from "./components/utils.js";
+import { updateResponseKeyString } from "./helpers/utils.js";
 
 const CarDetails = (props) => {
   const { carId } = useParams();

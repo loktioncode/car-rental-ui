@@ -1,6 +1,6 @@
 import CarCard from "./CarCard";
 import CarFilter from "./Filter";
-import { updateResponseKeyString } from "./utils.js";
+import { updateResponseKeyString } from "../helpers/utils";
 
 const DisplayCars = (props) => {
   var availableVendors = props.availableVendors;
