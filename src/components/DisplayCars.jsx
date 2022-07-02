@@ -59,6 +59,7 @@ const DisplayCars = (props) => {
                   carInfo={updateResponseKeyString(car.Vehicle)}
                   carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
                   carTotalCharges={updateResponseKeyString(car.TotalCharge)}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code}`}
                 />
               ))
             ) : (
