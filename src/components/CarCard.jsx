@@ -1,9 +1,9 @@
 const CarCard = (props) => {
   // console.log("vehicles", props.carInfo);
   return (
-    <>
-      <div className="rounded overflow-hidden shadow-lg dark:bg-gray-800">
-        <div className="px-3 pt-4 pb-2">
+ 
+      <div className="rounded overflow-hidden shadow-lg dark:bg-gray-800 ">
+        <div className="px-3 pt-4 pb-2 ">
           <span className="inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-200 mr-2 mb-2">
             {props.carInfo.PassengerQuantity} Passengers
           </span>
@@ -25,8 +25,12 @@ const CarCard = (props) => {
 
         <div className="px-6 py-4 ">
           <div className="font-bold text-2xl mb-2"> {props.carName.Name} </div>
-          <p className="inline-flex text-lg p-2">{props.carTotalCharges.CurrencyCode} </p>
-          <p className="inline-flex p-2 text-1xl font-bold rounded-md text-violet-300">{props.carTotalCharges.EstimatedTotalAmount} </p>
+          <p className="inline-flex text-lg p-2">
+            {props.carTotalCharges.CurrencyCode}{" "}
+          </p>
+          <p className="inline-flex p-2 text-1xl font-bold rounded-md text-violet-300">
+            {props.carTotalCharges.EstimatedTotalAmount}{" "}
+          </p>
           <p className="inline-flex text-sm">(estimate total) </p>
         </div>
 
@@ -37,7 +41,7 @@ const CarCard = (props) => {
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700"
             >
               {" "}
-              Choose Car {" "}
+              Choose Car{" "}
             </a>
           </div>
           <div className="ml-3 inline-flex rounded-md shadow">
@@ -51,7 +55,7 @@ const CarCard = (props) => {
           </div>
         </div>
       </div>
-    </>
+
   );
 };
 

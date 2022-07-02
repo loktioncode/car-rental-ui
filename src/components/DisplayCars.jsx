@@ -19,7 +19,6 @@ const DisplayCars = (props) => {
         availableCarsToRentInfo.push(
           updateResponseKeyString(availableCarsToRent[index][i])
         );
-        // availableCarsToRent.push(allCars[car].VehAvails);
       }
     }
   }
