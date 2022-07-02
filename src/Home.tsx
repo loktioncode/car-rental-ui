@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import CarContext from "./car-context-api/CarContext";
 import { CarCard } from "./components";
-import { updateResponseKeyString } from "./components/utils";
 
 // import logo from "./logo.svg";
 // import { Navigate } from "react-router-dom";
@@ -13,11 +12,16 @@ function Home() {
     alert("no cars to rent !!");
     // return <Navigate replace to="/login" />;
   }
+  
+  //removing the @ in the keys in my all cars array
+  const updateResponseKeyString = (data: object) => Object.keys(data).reduce((a, b) => (a[b.replace('@','')] = data[b], a), {})
 
   var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
- 
+
+  
   const newPickUpTimeData = updateResponseKeyString(pickUpTimeData);
   console.log(newPickUpTimeData)
+
 
 
 
