@@ -27,7 +27,7 @@ export const allCars =  [
                   "@DriveType": "Unspecified",
                   "@PassengerQuantity": "5+",
                   "@BaggageQuantity": "3",
-                  "@Code": "IFAR",
+                  "@Code": "IFAR2",
                   "@CodeContext": "CARTRAWLER",
                   "@DoorCount": "5",                               
                   "VehMakeModel": {
