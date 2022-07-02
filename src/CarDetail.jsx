@@ -9,16 +9,13 @@ const CarDetails = (props) => {
   const selectedCar = carsData.find(
     (car) => updateResponseKeyString(car.Vehicle).Code === carId
   );
-
-  carInfo = updateResponseKeyString(selectedCar.Vehicle);
-
+  
   const selectedCarName = updateResponseKeyString(
     selectedCar.Vehicle.VehMakeModel
   ).Name;
 
+  carInfo = updateResponseKeyString(selectedCar.Vehicle);
 
-
-  console.log(carInfo.pictureURL)
   
 
   return (
