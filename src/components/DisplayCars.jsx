@@ -11,7 +11,9 @@ const DisplayCars = (props) => {
   var allCars = props.allCars;
   const { filteredByVendor, filterState} = useContext(CarContext);
   const [filteredCarsByVendor, filterCarsByVendor] = filteredByVendor;
-  const [showFilter, setFilter] = filterState;
+  const [showFiltered, setFilter] = filterState;
+  const [selectedVendor, setSelectedVendor] = useState("");
+
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
@@ -30,7 +32,7 @@ const DisplayCars = (props) => {
                 filterCarsByVendor([])
                 setFilter(false);
               }}
-              className="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-violet-400  dark:text-gray-50"
+              className="flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
             >
               ALL
             </button>
@@ -50,7 +52,7 @@ const DisplayCars = (props) => {
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             
 
-            {availableCarsToRentInfo.length !== 0 && !showFilter ? (
+            {availableCarsToRentInfo.length !== 0 && !showFiltered ? (
               availableCarsToRentInfo.map((car) => (
                 <CarCard
                   key={updateResponseKeyString(car.Vehicle).Code}

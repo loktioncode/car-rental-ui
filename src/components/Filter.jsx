@@ -22,16 +22,14 @@ const FilterByVendor = (props) => {
 
   const filterAction = () => {
     findCarsByVendor(props.vendorName);
-    filteredCars !== 0
-      ? filterCarsByVendor(filteredCars)
-      : console.log("filter empty");
+    filterCarsByVendor(filteredCars)
     setFilter(true);
   }
 
   return (
     <button
       onClick={() => filterAction()}
-      className="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-violet-400 dark:text-gray-50"
+      className="flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 "
     >
       {props.vendorName}
     </button>
