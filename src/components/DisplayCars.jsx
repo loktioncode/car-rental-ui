@@ -15,7 +15,7 @@ const DisplayCars = (props) => {
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
 
-  // console.log("filtered Cars>>", filteredCarsByVendor);
+
 
   const handleFilterByNumber = (number) => {
     setCarsByNumber(availableCarsToRentInfo.slice(0, number));
@@ -84,7 +84,7 @@ const DisplayCars = (props) => {
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length ? (
               <button
                 type="button"
-                className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400"
+                className="px-6 py-3 text-base rounded-md hover:underline dark:bg-gray-900 dark:text-gray-100"
                 onClick={() => {
                   handleFilterByNumber(props.availableCarsToRentInfo.length);
                 }}

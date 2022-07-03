@@ -5,7 +5,7 @@ import CarContext from "../car-context-api/CarContext";
 const FilterByVendor = (props) => {
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [, filterCarsByVendor] = filteredByVendor;
-  const [showFilter, setFilter] = filterState;
+  const [, setFilter] = filterState;
 
   var allCars = props.allCars;
   var filteredCars = [];
@@ -22,7 +22,7 @@ const FilterByVendor = (props) => {
 
   const filterAction = () => {
     findCarsByVendor(props.vendorName);
-    filterCarsByVendor(filteredCars)
+    filterCarsByVendor(filteredCars);
     setFilter(true);
   }
 
