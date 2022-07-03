@@ -32,7 +32,7 @@ const DisplayCars = (props) => {
                 filterCarsByVendor([])
                 setFilter(false);
               }}
-              className="flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+              className="flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 border-b-4 active:border-violet-400 hover:bg-violet-600 focus:border-violet-400"
             >
               ALL
             </button>
