@@ -7,7 +7,7 @@ const CarFilter = (props) => {
   var filteredCars = [];
   const { filteredByVendor } = useContext(CarContext);
 
-  const [filteredVendors, filterCarsByVendor] = filteredByVendor;
+  const [ ,filterCarsByVendor] = filteredByVendor;
 
   const filterByVendor = (vendor) => {
     const selectedVendor = allCars.find(
@@ -25,8 +25,6 @@ const CarFilter = (props) => {
   
   };
 
-  // filterCarsByVendor(filteredCars);
-  //  filterCarsByVendor("filteredCars ..");
 
   return (
     <button
