@@ -81,7 +81,7 @@ const DisplayCars = (props) => {
                 ))}
           </div>
           <div className="flex justify-center">
-            {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length ? (
+            {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
                 type="button"
                 className="px-6 py-3 text-base rounded-md hover:underline dark:bg-gray-900 dark:text-gray-100"
