@@ -8,7 +8,11 @@ import CarContext from "./car-context-api/CarContext";
 import { updateResponseKeyString } from "./helpers/utils.js";
 
 function App() {
-  const [cars] = useContext(CarContext);
+
+  const {allCarsData} = useContext(CarContext);
+  const [cars, ] = allCarsData;
+
+
   var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
   var allCars = cars[0].VehAvailRSCore.VehVendorAvails;
 

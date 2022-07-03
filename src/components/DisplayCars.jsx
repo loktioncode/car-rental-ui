@@ -2,26 +2,25 @@ import CarCard from "./CarCard";
 import CarFilter from "./Filter";
 import Legend from "./Legend";
 import { updateResponseKeyString } from "../helpers/utils";
+import React, { useContext } from "react";
+import CarContext from "../car-context-api/CarContext";
+
 
 const DisplayCars = (props) => {
-  // var allCars = props.allCars;
+
+  const {filteredByVendor} = useContext(CarContext);
+
+  const [filteredVendors, ] = filteredByVendor;
+  
+
+  var allCars = props.allCars;
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
 
-  // const filterByVendor = (vendor) => {
-  //   console.log(vendor);
-    // const selectedVendor = allCars.find(
-    //   (cars) => updateResponseKeyString(cars.Vendor).Name === vendor
-    // );
 
-    // console.log(">>", updateResponseKeyString(selectedVendor.VehAvails))
-    // console.log(">>2", updateResponseKeyString(availableCarsToRentInfo))
 
-    // return updateResponseKeyString(selectedVendor.VehAvails);
-  // };
-
-  console.log(props.pickUpTimeData);
+  console.log("filtered Cars>>",filteredVendors);
 
   return (
     <>
@@ -32,7 +31,7 @@ const DisplayCars = (props) => {
               <CarFilter
                 key={vendor.Code}
                 vendorName={vendor.Name}
-                // filter={filterByVendor(vendor.Name)}
+                allCars={allCars}
               />
             ))}
           </div>

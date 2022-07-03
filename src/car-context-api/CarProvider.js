@@ -3,7 +3,10 @@ import { allCars } from "./car_data";
 import CarContext from "./CarContext";
 
 export const CarProvider = ({ children }) => {
+
   const [cars, setCars] = useState(allCars);
+  const [filteredVendors, setVendorCarFilter] = useState([]);
+
 
   //ANOTHER WAY TO GET CARS DYNAMICALLY
   // const getCars = async () => {
@@ -25,8 +28,12 @@ export const CarProvider = ({ children }) => {
   //   setCars(allCars);
   // }, []);
 
+  const filterCarsByVendor = (data) => {
+    setVendorCarFilter(data);
+  }
+
   return (
-    <CarContext.Provider value={[cars, setCars]}>
+    <CarContext.Provider value={{ allCarsData: [cars, setCars], filteredByVendor: [filteredVendors, filterCarsByVendor] }}>
       {children}
     </CarContext.Provider>
   );
