@@ -44,7 +44,7 @@ function App() {
       );
     });
 
-    console.log("sorted rentals desc order >>", availableCarsToRentInfo);
+    // console.log("sorted rentals desc order >>", availableCarsToRentInfo);
   }
 
   if (!cars) {

@@ -1,34 +1,41 @@
 import CarCard from "./CarCard";
-import CarFilter from "./Filter";
+import FilterByVendor from "./Filter";
 import Legend from "./Legend";
 import { updateResponseKeyString } from "../helpers/utils";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
 
 
 const DisplayCars = (props) => {
 
-  const {filteredByVendor} = useContext(CarContext);
-
-  const [filteredVendors, ] = filteredByVendor;
-  
-
   var allCars = props.allCars;
+  const { filteredByVendor, filterState} = useContext(CarContext);
+  const [filteredCarsByVendor, filterCarsByVendor] = filteredByVendor;
+  const [showFilter, setFilter] = filterState;
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
 
-
-
-  console.log("filtered Cars>>",filteredVendors);
+  console.log("filtered Cars>>", filteredCarsByVendor);
+    // console.log("all Cars>>", availableCarsToRentInfo);
 
   return (
     <>
       <section className="dark:text-gray-100">
         {availableVendors.length !== 0 ? (
           <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
+            <button
+              onClick={() => {
+                console.log("show all cars");
+                filterCarsByVendor([])
+                setFilter(false);
+              }}
+              className="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-violet-400  dark:text-gray-50"
+            >
+              ALL
+            </button>
             {availableVendors.map((vendor) => (
-              <CarFilter
+              <FilterByVendor
                 key={vendor.Code}
                 vendorName={vendor.Name}
                 allCars={allCars}
@@ -41,21 +48,33 @@ const DisplayCars = (props) => {
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <Legend pickUpTimeData={props.pickUpTimeData} />
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {availableCarsToRentInfo.length !== 0 ? (
+            
+
+            {availableCarsToRentInfo.length !== 0 && !showFilter ? (
               availableCarsToRentInfo.map((car) => (
                 <CarCard
                   key={updateResponseKeyString(car.Vehicle).Code}
                   carInfo={updateResponseKeyString(car.Vehicle)}
                   carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
                   carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-                  carDetailURL={`/rentalcars/${
-                    updateResponseKeyString(car.Vehicle).Code
-                  }`}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
+                    }`}
                 />
               ))
             ) : (
-              <div>Loading...</div>
+              filteredCarsByVendor.map((car) => (
+                <CarCard
+                  key={updateResponseKeyString(car.Vehicle).Code}
+                  carInfo={updateResponseKeyString(car.Vehicle)}
+                  carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
+                  carTotalCharges={updateResponseKeyString(car.TotalCharge)}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
+                    }`}
+                />
+              ))
             )}
+
+
           </div>
           <div className="flex justify-center">
             <button

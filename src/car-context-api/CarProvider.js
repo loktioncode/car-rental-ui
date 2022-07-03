@@ -1,11 +1,13 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import { allCars } from "./car_data";
 import CarContext from "./CarContext";
 
 export const CarProvider = ({ children }) => {
 
   const [cars, setCars] = useState(allCars);
-  const [filteredVendors, setVendorCarFilter] = useState([]);
+  const [filteredCarsByVendor, setVendorFilterByVendor] = useState([]);
+  const [showFilter, setFilter] = useState(false);
+
 
 
   //ANOTHER WAY TO GET CARS DYNAMICALLY
@@ -24,16 +26,16 @@ export const CarProvider = ({ children }) => {
   // };
 
   // useEffect(() => {
-  //   const allCars = getCars();
-  //   setCars(allCars);
+    // const allCars = getCars();
+    // setCars(allCars);
   // }, []);
 
   const filterCarsByVendor = (data) => {
-    setVendorCarFilter(data);
+    setVendorFilterByVendor(data);
   }
 
   return (
-    <CarContext.Provider value={{ allCarsData: [cars, setCars], filteredByVendor: [filteredVendors, filterCarsByVendor] }}>
+    <CarContext.Provider value={{ allCarsData: [cars, setCars], filteredByVendor: [filteredCarsByVendor, filterCarsByVendor], filterState: [showFilter, setFilter] }}>
       {children}
     </CarContext.Provider>
   );
