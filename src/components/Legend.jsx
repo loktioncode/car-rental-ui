@@ -4,51 +4,34 @@ const Legend = (props) => {
   return (
     <legend className="">
 
-      <div className="px-8 py-2 dark:text-gray-500">
-        <div className="flex items-center mx-auto container justify-center md:justify-between py-2">
+      <div className="px-2 py-2 dark:text-gray-500">
+        <div className="flex items-center container md:justify-between py-2">
           <div>
-            <p className="text-sm inline-block uppercase">PickUp Location:&nbsp;</p>
-            <span className="text-lg inline-block pl-4 pr-4 uppercase">{updateResponseKeyString(props.pickUpTimeData.PickUpLocation).Name}</span>
+            <p className="text-sm inline-block capitalize lg:font-bold">PickUp Location:&nbsp;</p>
+            <span className="text-lg inline-block lg:pl-4 lg:pr-4 lg:uppercase sm:text-xs">{updateResponseKeyString(props.pickUpTimeData.PickUpLocation).Name}</span>
           </div>
 
-          <a href="/" rel="noopener noreferrer" className="items-center gap-2 hidden md:flex">
-
-
-            <p className="text-sm inline-block uppercase font-bold">Return Location: </p>
-            <span className="text-lg inline-block">
-              {updateResponseKeyString(props.pickUpTimeData.ReturnLocation).Name}
-            </span>
-
-          </a>
-        </div>
-
-
-        <div className="flex items-center mx-auto container justify-center md:justify-between py-2">
+          <div>
+            <p className="text-sm inline-block capitalize lg:font-bold ">Return Location:&nbsp;</p>
+            <span className="text-lg inline-block lg:pl-4 lg:pr-4 lg:uppercase sm:text-xs">{updateResponseKeyString(props.pickUpTimeData.ReturnLocation).Name}</span>
+          </div>
           
-          <a href="/" rel="noopener noreferrer" className="items-center gap-2 hidden md:flex">
-
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {/* <p className="text-sm inline-block uppercase">PickUp Time:</p> */}
-            <span className="text-lg inline-block">
-              {formartDate(props.pickUpTimeData.PickUpDateTime)}
-            </span>
-
-          </a>
-
-          <a href="/" rel="noopener noreferrer" className="items-center gap-2 hidden md:flex">
-
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {/* <p className="text-sm inline-block uppercase font-bold">Return Time: </p> */}
-            <span className="text-lg inline-block">
-              {formartDate(props.pickUpTimeData.ReturnDateTime)}
-            </span>
-
-          </a>
         </div>
+
+        <div className="flex items-center container md:justify-between py-2">
+          <div>
+            
+            <p className="text-sm inline-block capitalize lg:font-bold">PickUp Time</p>
+            <span className="text-base inline-block lg:pl-4 lg:pr-4 lg:uppercase sm:text-xs">{formartDate(props.pickUpTimeData.PickUpDateTime)}</span>
+          </div>
+
+          <div>
+            <p className="text-sm inline-block capitalize lg:font-bold">Return Time</p>
+            <span className="text-base inline-block lg:pl-4 lg:pr-4 lg:uppercase sm:text-xs">{formartDate(props.pickUpTimeData.ReturnDateTime)}</span>
+          </div>
+          
+        </div>
+
 
 
       </div>

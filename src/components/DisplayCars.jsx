@@ -27,7 +27,7 @@ const DisplayCars = (props) => {
     <>
       <section className="dark:text-gray-100">
         {availableVendors.length !== 0 ? (
-          <div className="flex items-center -mx-4 space-x-2 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:text-gray-100">
+          <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
             {availableVendors.map((vendor) => (
               <CarFilter
                 key={vendor.Code}
