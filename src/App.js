@@ -51,8 +51,6 @@ function App() {
 
   const newPickUpTimeData = updateResponseKeyString(pickUpTimeData);
 
-  console.log("PickUpTime>",newPickUpTimeData);
-
 
   return (
       <div className="App-header min-h-screen dark:bg-darkGray-800 dark:text-coolGray-100">
@@ -62,7 +60,7 @@ function App() {
             {(availableCarsToRentInfo.length !== 0 && availableVendors.length === allCars.length) ? (
         <main>
         <Routes>
-          <Route path="/" element={<Home allCars={allCars} availableVendors={availableVendors} availableCarsToRentInfo={availableCarsToRentInfo} />} />
+          <Route path="/" element={<Home pickUpTimeData={newPickUpTimeData} allCars={allCars} availableVendors={availableVendors} availableCarsToRentInfo={availableCarsToRentInfo} />} />
           <Route path="/rentalcars/:carId" element={<CarDetail  availableCarsToRentInfo={availableCarsToRentInfo}/>} />
         </Routes>
       </main>

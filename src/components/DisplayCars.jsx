@@ -4,13 +4,13 @@ import Legend from "./Legend";
 import { updateResponseKeyString } from "../helpers/utils";
 
 const DisplayCars = (props) => {
-  var allCars = props.allCars;
+  // var allCars = props.allCars;
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
 
-  const filterByVendor = (vendor) => {
-    console.log(vendor);
+  // const filterByVendor = (vendor) => {
+  //   console.log(vendor);
     // const selectedVendor = allCars.find(
     //   (cars) => updateResponseKeyString(cars.Vendor).Name === vendor
     // );
@@ -19,7 +19,9 @@ const DisplayCars = (props) => {
     // console.log(">>2", updateResponseKeyString(availableCarsToRentInfo))
 
     // return updateResponseKeyString(selectedVendor.VehAvails);
-  };
+  // };
+
+  console.log(props.pickUpTimeData);
 
   return (
     <>
@@ -38,7 +40,7 @@ const DisplayCars = (props) => {
           <div>Loading...</div>
         )}
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          <Legend />
+          <Legend pickUpTimeData={props.pickUpTimeData} />
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {availableCarsToRentInfo.length !== 0 ? (
               availableCarsToRentInfo.map((car) => (

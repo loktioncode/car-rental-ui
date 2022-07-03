@@ -6,6 +6,7 @@ function Home(props) {
 
   var availableVendors = props.availableVendors;
   var availableCarsToRentInfo = props.availableCarsToRentInfo;
+  var pickUpTimeData = props.pickUpTimeData;
 
   return (
     <div className="container mx-auto space-y-16">
@@ -14,6 +15,7 @@ function Home(props) {
         availableCarsToRentInfo={availableCarsToRentInfo}
         availableVendors={availableVendors}
         allCars={allCars}
+        pickUpTimeData={pickUpTimeData}
       />
     </div>
   );
