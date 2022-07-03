@@ -3,3 +3,5 @@ export { default as CarCard } from "./CarCard.jsx";
 export { default as DisplayCars } from "./DisplayCars.jsx";
 export { default as CarFilter } from "./Filter.jsx";
 export { default as Footer } from "./Footer.jsx";
+export { default as Legend } from "./Legend.jsx";
+

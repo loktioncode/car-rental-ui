@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { allCars } from "./car-info";
+import { allCars } from "./car_data";
 import CarContext from "./CarContext";
 
 export const CarProvider = ({ children }) => {
@@ -19,8 +19,6 @@ export const CarProvider = ({ children }) => {
   //     throw new Error(message);
   //   }
   // };
-
- 
 
   // useEffect(() => {
   //   const allCars = getCars();

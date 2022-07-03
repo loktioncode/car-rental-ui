@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+legend {
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
