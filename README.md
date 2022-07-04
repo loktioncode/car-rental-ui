@@ -1,7 +1,7 @@
 # React UI for Car Rental
 ## take home test for FrontEnd Engineer Role
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is LIVE @ [CAR RENTAL UI TEST](https://car-rental-ui-six.vercel.app/).
 
 ## Available Scripts
 
