@@ -25,7 +25,7 @@ const DisplayCars = (props) => {
     handleFilterByNumber(6);
   }, []);
 
-  console.log(allCars)
+  // console.log(props.pickUpTimeData)
 
   return (
     <>
