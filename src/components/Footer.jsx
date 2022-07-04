@@ -4,7 +4,7 @@ const Footer = (props) => {
       <div className="container flex justify-between p-6 mx-auto lg:p-8 dark:bg-Gray-900">
         <a
           rel="noopener noreferrer"
-          href="https://mam.com/business"
+          href="/"
           className="font-bold"
         >
           Car Rental UI Test
