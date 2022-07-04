@@ -16,7 +16,6 @@ const CarDetails = (props) => {
   const selectedCarName = updateResponseKeyString(
     selectedCar.Vehicle.VehMakeModel
   );
-  console.log(selectedCar.TotalCharge);
 
   carInfo = updateResponseKeyString(selectedCar.Vehicle);
 
