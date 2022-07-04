@@ -8,7 +8,7 @@ const CarCard = (props) => {
     <div className="rounded overflow-hidden shadow-lg dark:bg-slate-900 content-center">
       <div className="pl-10 pr-10 pt-5">
         <img
-          className="w-full"
+          className="lg:w-full"
           src={props.carInfo.PictureURL}
           alt="River"
         ></img>
