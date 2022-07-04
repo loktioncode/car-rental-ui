@@ -9,8 +9,8 @@ import { updateResponseKeyString } from "./helpers/utils.js";
 
 function App() {
 
-  const {allCarsData} = useContext(CarContext);
-  const [cars, ] = allCarsData;
+  const { allCarsData } = useContext(CarContext);
+  const [cars,] = allCarsData;
 
 
   var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
@@ -51,32 +51,32 @@ function App() {
     alert("no cars to rent !!");
     // return <Navigate replace to="/login" />;
   }
- 
+
 
   const newPickUpTimeData = updateResponseKeyString(pickUpTimeData);
 
 
   return (
-      <div className="App-header min-h-screen dark:bg-darkGray-800 dark:text-coolGray-100">
-        <div className="p-6 space-y-8">
-          <Router>
-            <NavBar />
-            {(availableCarsToRentInfo.length !== 0 && availableVendors.length === allCars.length) ? (
-        <main>
-        <Routes>
-          <Route path="/" element={<Home pickUpTimeData={newPickUpTimeData} allCars={allCars} availableVendors={availableVendors} availableCarsToRentInfo={availableCarsToRentInfo} />} />
-          <Route path="/rentalcars/:carId" element={<CarDetail  availableCarsToRentInfo={availableCarsToRentInfo}/>} />
-        </Routes>
-      </main>
-      ) : (
-        <div>Loading...</div>
-      )}
-            
-          </Router>
-          <Footer />
-        </div>
+    <div className="App-header min-h-screen dark:bg-darkGray-800 dark:text-coolGray-100">
+      <div className="p-6 space-y-8">
+        <Router>
+          <NavBar />
+          {(availableCarsToRentInfo.length !== 0 && availableVendors.length === allCars.length) ? (
+            <main>
+              <Routes>
+                <Route path="/" element={<Home pickUpTimeData={newPickUpTimeData} allCars={allCars} availableVendors={availableVendors} availableCarsToRentInfo={availableCarsToRentInfo} />} />
+                <Route path="/rentalcars/:carId" element={<CarDetail availableCarsToRentInfo={availableCarsToRentInfo} />} />
+              </Routes>
+            </main>
+          ) : (
+            <div>Loading...</div>
+          )}
+
+        </Router>
+        <Footer />
       </div>
-   
+    </div>
+
   );
 }
 
