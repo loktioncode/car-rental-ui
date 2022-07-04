@@ -39,3 +39,7 @@ legend {
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
+
+.clip {
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}

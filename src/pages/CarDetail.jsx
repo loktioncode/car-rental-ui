@@ -21,17 +21,26 @@ const CarDetails = (props) => {
 
   return (
     <>
-      <div className="px-2 text-left ">
-      
-      <Link to="/" className="inline-flex text-md">Home {" "}</Link>
-     
-      <p className="inline-flex pl-2 pr-2 text-md text-white"> / </p>
-      <p className="inline-flex  text-lg font-bold rounded-md text-violet-200">
-        Cars{" "}
-      </p> 
-      
-     
-    </div>
+      <ol className="flex overflow-hidden text-gray-700 ">
+        <li className="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300 hover:text-violet-600"><span className="ml-1.5 font-medium text-xs"> Home </span></Link>
+        </li>
+
+        <li className="relative flex items-center">
+          <span className="absolute inset-y-0 w-4 h-10 bg-gray-300 -left-px clip"> </span>
+
+          <button
+            className="flex items-center h-10 pl-8 pr-4 text-xs font-medium transition-colors bg-white hover:text-gray-900"
+           
+          >
+            Cars
+          </button>
+        </li>
+      </ol>
+
       <a
         rel="noopener noreferrer"
         href="/"
@@ -52,7 +61,7 @@ const CarDetails = (props) => {
 
             {/* / */}
             <div className="px-2 text-center ">
-      
+
               <p className="inline-flex text-md ">
                 {updateResponseKeyString(selectedCar.TotalCharge).CurrencyCode}{" "}
               </p>
