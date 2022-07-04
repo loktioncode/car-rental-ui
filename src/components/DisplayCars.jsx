@@ -32,7 +32,6 @@ const DisplayCars = (props) => {
           <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
             <button
               onClick={() => {
-                console.log("show all cars");
                 filterCarsByVendor([]);
                 setFilter(false);
               }}
