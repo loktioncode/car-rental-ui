@@ -5,11 +5,11 @@ import CarContext from "./CarContext";
 export const CarProvider = ({ children }) => {
 
   const [cars, setCars] = useState(allCars);
-  const [filteredCarsByVendor, setVendorFilterByVendor] = useState([]);
+  const [filteredCarsByVendor, setFilterCarByVendor] = useState([]);
   const [showFilter, setFilter] = useState(false);
 
   const filterCarsByVendor = (data) => {
-    setVendorFilterByVendor(data);
+    setFilterCarByVendor(data);
   }
 
   return (
