@@ -25,12 +25,15 @@ const DisplayCars = (props) => {
     handleFilterByNumber(6);
   }, []);
 
+  console.log(allCars)
+
   return (
     <>
       <section className="dark:text-gray-100">
         {availableVendors.length !== 0 ? (
           <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
             <button
+            data-test="instructions"
               onClick={() => {
                 filterCarsByVendor([]);
                 setFilter(false);

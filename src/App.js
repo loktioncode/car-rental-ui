@@ -7,7 +7,7 @@ import { NavBar, Footer } from "./components";
 import CarContext from "./car-context-api/CarContext";
 import { updateResponseKeyString } from "./helpers/utils.js";
 
-function App() {
+const App = () => {
 
   const { allCarsData } = useContext(CarContext);
   const [cars,] = allCarsData;
