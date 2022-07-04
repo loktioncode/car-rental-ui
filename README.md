@@ -7,6 +7,9 @@ This project is LIVE @ [CAR RENTAL UI TEST](https://car-rental-ui-six.vercel.app
 
 In the project directory, you can run:
 
+Run below command to install dependencies
+### `npm install`
+
 ### `npm start`
 
 Runs the app in the development mode.\
