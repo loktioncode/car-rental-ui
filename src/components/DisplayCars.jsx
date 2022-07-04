@@ -33,7 +33,7 @@ const DisplayCars = (props) => {
         {availableVendors.length !== 0 ? (
           <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
             <button
-            data-test="instructions"
+              data-test="instructions"
               onClick={() => {
                 filterCarsByVendor([]);
                 setFilter(false);
@@ -53,34 +53,34 @@ const DisplayCars = (props) => {
         ) : (
           <div>Loading...</div>
         )}
+
+        <Legend pickUpTimeData={props.pickUpTimeData} />
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          <Legend pickUpTimeData={props.pickUpTimeData} />
+
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {availableCarsToRentInfo.length !== 0 &&
-            !showFiltered &&
-            availableCarsToRentFilteredByNumber.length !== 0
+              !showFiltered &&
+              availableCarsToRentFilteredByNumber.length !== 0
               ? availableCarsToRentFilteredByNumber.map((car) => (
-                  <CarCard
-                    key={updateResponseKeyString(car.Vehicle).Code}
-                    carInfo={updateResponseKeyString(car.Vehicle)}
-                    carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
-                    carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-                    carDetailURL={`/rentalcars/${
-                      updateResponseKeyString(car.Vehicle).Code
+                <CarCard
+                  key={updateResponseKeyString(car.Vehicle).Code}
+                  carInfo={updateResponseKeyString(car.Vehicle)}
+                  carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
+                  carTotalCharges={updateResponseKeyString(car.TotalCharge)}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
                     }`}
-                  />
-                ))
+                />
+              ))
               : filteredCarsByVendor.map((car) => (
-                  <CarCard
-                    key={updateResponseKeyString(car.Vehicle).Code}
-                    carInfo={updateResponseKeyString(car.Vehicle)}
-                    carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
-                    carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-                    carDetailURL={`/rentalcars/${
-                      updateResponseKeyString(car.Vehicle).Code
+                <CarCard
+                  key={updateResponseKeyString(car.Vehicle).Code}
+                  carInfo={updateResponseKeyString(car.Vehicle)}
+                  carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
+                  carTotalCharges={updateResponseKeyString(car.TotalCharge)}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
                     }`}
-                  />
-                ))}
+                />
+              ))}
           </div>
           <div className="flex justify-center">
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (

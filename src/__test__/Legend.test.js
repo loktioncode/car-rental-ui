@@ -13,7 +13,7 @@ var testData = {
   }
 }
 
-test('renders loading text', () => {
+test('loading formatted pick up and return dates', () => {
     render(<Legend pickUpTimeData={ testData } />);
     expect(screen.getByText(`Sunday, March 22nd 2020, 12:00:00 pm`)).toBeInTheDocument();
     expect(screen.getByText(`Monday, April 6th 2020, 12:00:00 pm`)).toBeInTheDocument();
