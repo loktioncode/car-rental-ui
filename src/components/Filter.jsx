@@ -1,16 +1,25 @@
 import { updateResponseKeyString } from "../helpers/utils";
 import React, { useContext } from "react";
 import CarContext from "../car-context-api/CarContext";
+import style from '../styles/filter.module.css';
+import avisLogo from '../assets/Vendors/avis.svg';
+import hertzLogo from '../assets/Vendors/hertz.svg';
+import alamoLogo from '../assets/Vendors/alamo.svg'
+
+
+
 
 const FilterByVendor = (props) => {
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [, filterCarsByVendor] = filteredByVendor;
   const [, setFilter] = filterState;
 
+
   const allCars = props.allCars;
   var filteredCars = [];
 
   const findCarsByVendor = (vendor) => {
+
     let selectedVendor = allCars.find(
       (cars) => updateResponseKeyString(cars.Vendor).Name === vendor
     );
@@ -28,12 +37,18 @@ const FilterByVendor = (props) => {
 
   return (
     <button
-    type="button"
+      type="button"
       onClick={() => filterAction()}
-      className="filter-button flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 border-b-4 active:border-violet-400 hover:bg-violet-600 focus:border-violet-400"
+      className={style.filterBtn}
     >
+      {
 
-      {props.vendorName}
+        props.vendorName === "ALAMO" ? <img src={alamoLogo} alt={props.vendorName + " " + "logo"} className={style.vendorLogo} /> :
+          props.vendorName === "AVIS" ? <img src={avisLogo} alt={props.vendorName + " " + "logo"} className={style.vendorLogo} /> :
+            props.vendorName === "HERTZ" ? <img src={hertzLogo} alt={props.vendorName + " " + "logo"} className={style.vendorLogo} /> : props.vendorName
+
+      }
+
     </button>
   );
 };

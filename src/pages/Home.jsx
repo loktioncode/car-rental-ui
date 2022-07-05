@@ -9,15 +9,12 @@ function Home(props) {
   var pickUpTimeData = props.pickUpTimeData;
 
   return (
-    <div className="container mx-auto space-y-16">
-   
       <DisplayCars
         availableCarsToRentInfo={availableCarsToRentInfo}
         availableVendors={availableVendors}
         allCars={allCars}
         pickUpTimeData={pickUpTimeData}
       />
-    </div>
   );
 }
 

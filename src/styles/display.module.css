@@ -1,0 +1,49 @@
+@import url("./textstyle.module.css");
+
+.displayCars{
+  position: relative;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30%;
+    margin-right: 30%; 
+
+  }
+
+.allVendorsBtn{
+  margin-right: 5%;
+  color: var(--defaultTextColor);
+
+}
+  
+  /* For extremely small screen devices (595px and below) */
+  @media only screen and (max-width: 595px) {
+    .filterContainer {
+      margin-left: 10%;
+      margin-right: 10%; 
+    justify-content: space-evenly;
+    }
+
+
+  }
+  
+  /* Small screen devices (600px and above) */
+  @media only screen and (min-width: 600px) {
+  }
+  
+  /* Medium screen devices (768px and above) */
+  @media only screen and (min-width: 768px) {
+  }
+  
+  /* Big screen devices (889px and above) */
+  @media only screen and (min-width: 889px) {
+  }
+  
+  /* Extra big screen devices (1200px and above) */
+  @media only screen and (min-width: 1200px) {
+  }
+  

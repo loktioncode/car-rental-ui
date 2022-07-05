@@ -54,7 +54,7 @@ const App = () => {
 
 
   return (
-    <div className="App-header min-h-screen dark:bg-darkGray-800 dark:text-coolGray-100">
+    <div className="App-header min-h-screen">
       <div className="p-6 space-y-8">
         <Router>
           <NavBar />
