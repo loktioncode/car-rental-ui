@@ -36,7 +36,7 @@ const CarDetails = (props) => {
             className="flex items-center h-10 pl-8 pr-4 text-xs font-medium transition-colors bg-white hover:text-gray-900"
            
           >
-            Cars
+            Car Details
           </button>
         </li>
       </ol>
