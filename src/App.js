@@ -11,11 +11,8 @@ const App = () => {
 
   const { allCarsData } = useContext(CarContext);
   const [cars,] = allCarsData;
-
-
-  var pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
-  var allCars = cars[0].VehAvailRSCore.VehVendorAvails;
-
+  const pickUpTimeData = cars[0].VehAvailRSCore.VehRentalCore;
+  const allCars = cars[0].VehAvailRSCore.VehVendorAvails;
 
   var availableVendors = [];
   var availableCarsToRent = [];

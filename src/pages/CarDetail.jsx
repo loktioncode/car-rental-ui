@@ -6,8 +6,7 @@ import {
 
 const CarDetails = (props) => {
   const { carId } = useParams();
-  var carsData = props.availableCarsToRentInfo;
-  var carInfo;
+  const carsData = props.availableCarsToRentInfo;
 
   const selectedCar = carsData.find(
     (car) => updateResponseKeyString(car.Vehicle).Code === carId
@@ -17,7 +16,7 @@ const CarDetails = (props) => {
     selectedCar.Vehicle.VehMakeModel
   );
 
-  carInfo = updateResponseKeyString(selectedCar.Vehicle);
+  const carInfo = updateResponseKeyString(selectedCar.Vehicle);
 
   return (
     <>

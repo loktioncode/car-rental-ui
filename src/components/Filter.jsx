@@ -7,11 +7,11 @@ const FilterByVendor = (props) => {
   const [, filterCarsByVendor] = filteredByVendor;
   const [, setFilter] = filterState;
 
-  var allCars = props.allCars;
+  const allCars = props.allCars;
   var filteredCars = [];
 
   const findCarsByVendor = (vendor) => {
-    const selectedVendor = allCars.find(
+    let selectedVendor = allCars.find(
       (cars) => updateResponseKeyString(cars.Vendor).Name === vendor
     );
 

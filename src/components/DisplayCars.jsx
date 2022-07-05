@@ -6,20 +6,17 @@ import React, { useContext, useEffect, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
 
 const DisplayCars = (props) => {
-  var allCars = props.allCars;
+  
+  const allCars = props.allCars;
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [filteredCarsByVendor, filterCarsByVendor] = filteredByVendor;
   const [showFiltered, setFilter] = filterState;
-  var [availableCarsToRentFilteredByNumber, setCarsByNumber] = useState([]);
+  const [availableCarsToRentFilteredByNumber, setCarsByNumber] = useState([]);
 
-  var availableVendors = props.availableVendors;
-  var availableCarsToRentInfo = props.availableCarsToRentInfo;
+  const availableVendors = props.availableVendors; 
+  const availableCarsToRentInfo = props.availableCarsToRentInfo;
 
-
-
-  const handleFilterByNumber = (number) => {
-    setCarsByNumber(availableCarsToRentInfo.slice(0, number));
-  };
+  const handleFilterByNumber = (number) => setCarsByNumber(availableCarsToRentInfo.slice(0, number));
 
   useEffect(() => {
     handleFilterByNumber(6);
