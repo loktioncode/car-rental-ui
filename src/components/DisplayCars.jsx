@@ -22,16 +22,16 @@ const DisplayCars = (props) => {
   const availableCarsToRentInfo = props.availableCarsToRentInfo;
 
   const [sortByPrice, setSortByPrice] = useState('Sort by price: low to high');
+  const options = [
+    { label: 'Sort by price: low to high', value: '1' },
+    { label: 'Sort by price: high to low', value: '2' }
+  ];
+
 
   const handleFilterByNumber = useCallback((number) => {
     setCarsByNumber(availableCarsToRentInfo.slice(0, number))
   }, [availableCarsToRentInfo]);
 
-
-  const options = [
-    { label: 'Sort by price: low to high', value: '1' },
-    { label: 'Sort by price: high to low', value: '2' }
-  ];
 
   const onPriceFilterChange = (event) => {
     setSortByPrice(event.target.value);
@@ -41,7 +41,7 @@ const DisplayCars = (props) => {
 
   const filterByPrice = useCallback(() => {
     if (sortByPrice === 'Sort by price: low to high') {
-     
+
       availableCarsToRentInfo.sort(function (a, b) {
         return (
           parseInt(updateResponseKeyString(a.TotalCharge).EstimatedTotalAmount) -
@@ -52,7 +52,7 @@ const DisplayCars = (props) => {
       handleFilterByNumber(6);
 
     } else {
-      
+
       availableCarsToRentInfo.sort(function (a, b) {
         return (
           parseInt(updateResponseKeyString(b.TotalCharge).EstimatedTotalAmount) -
@@ -76,16 +76,19 @@ const DisplayCars = (props) => {
     <section className={displayStyle.displayCars}>
       {availableVendors.length !== 0 ? (
         <div className={displayStyle.filterContainer}>
-          <button
-            data-test="instructions"
-            onClick={() => {
-              filterCarsByVendor([]);
-              setFilter(false);
-            }}
-            className={displayStyle.allVendorsBtn + ' ' + 'semibold'}
-          >
-            ALL
-          </button>
+          <div className="px-8">
+            <button
+              data-test="instructions"
+              onClick={() => {
+                filterCarsByVendor([]);
+                setFilter(false);
+              }}
+              className={secondaryBtnStyle.secondaryBtn}
+            >
+              ALL
+            </button>
+          </div>
+
           {availableVendors.map((vendor) => (
             <FilterByVendor
               key={vendor.Code}
