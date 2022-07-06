@@ -4,7 +4,7 @@ import Legend from "./Legend";
 import { updateResponseKeyString } from "../helpers/utils";
 import React, { useContext, useEffect, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
-import displayStyle from '../styles/display.module.css';
+import displayStyle from '../styles/displaycars.module.css';
 
 
 const DisplayCars = (props) => {
@@ -55,10 +55,9 @@ const DisplayCars = (props) => {
         )}
 
         <Legend pickUpTimeData={props.pickUpTimeData} />
-        <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className={displayStyle.carsContainer}>
 
-
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={displayStyle.carGrid}>
             {availableCarsToRentInfo.length !== 0 &&
               !showFiltered &&
               availableCarsToRentFilteredByNumber.length !== 0
@@ -83,7 +82,9 @@ const DisplayCars = (props) => {
                 />
               ))}
           </div>
-          <div className="flex justify-center">
+      
+        </div>
+        <div className="flex justify-center mt-5">
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
                 type="button"
@@ -98,7 +99,6 @@ const DisplayCars = (props) => {
               ""
             )}
           </div>
-        </div>
       </section>
 
   );
