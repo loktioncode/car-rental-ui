@@ -37,26 +37,26 @@ const CarDetails = (props) => {
     <>
 
       <section className="p-6">
-      <ol className="flex overflow-hidden py-4 ">
-        <li className="flex items-center">
+        <ol className="flex overflow-hidden py-4 ">
+          <li className="flex items-center">
 
-          <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300"><span className="ml-1.5 font-medium text-sm"> Home </span></Link>
-        </li>
+            <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300"><span className="ml-1.5 font-medium text-sm"> Home </span></Link>
+          </li>
 
-        <li className="relative flex items-center">
-          <span className="absolute inset-y-0 w-4 h-10 bg-gray-300 -left-px clip"> </span>
+          <li className="relative flex items-center">
+            <span className="absolute inset-y-0 w-4 h-10 bg-gray-300 -left-px clip"> </span>
 
-          <button
-            className="flex items-center h-10 pl-8 pr-4 text-xs font-medium transition-colors bg-white hover:text-gray-900"
+            <button
+              className="flex items-center h-10 pl-8 pr-4 text-xs font-medium transition-colors bg-white hover:text-gray-900"
 
-          >
-            Car Details
-          </button>
-        </li>
-      </ol>
+            >
+              Car Details
+            </button>
+          </li>
+        </ol>
         <div className={carDetailStyle.carDetailBox}>
 
-        <div className="py-4 lg:py-14 md:py-15">
+          <div className="py-4 lg:py-14 md:py-15">
             <img
               src={carInfo.PictureURL}
               alt=""
@@ -114,6 +114,15 @@ const CarDetails = (props) => {
 
                   {carInfo.AirConditionInd ? "Air Conditioner" : "No Air Conditioner"}
                 </span>
+
+
+                <span className={textStyle.subtitleS}>
+                  <img className={carDetailStyle.iconStyle} src={bagIcon}></img>
+                  {carInfo.BaggageQuantity}
+
+                </span>
+
+
               </div>
 
               <div className="px-8 pt-10 pb-5 ">
@@ -128,7 +137,7 @@ const CarDetails = (props) => {
             </div>
 
           </div>
-     
+
         </div>
       </section>
     </>
