@@ -5,6 +5,8 @@ import { updateResponseKeyString } from "../helpers/utils";
 import React, { useContext, useEffect, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
 import displayStyle from '../styles/displaycars.module.css';
+import secondaryBtnStyle from '../styles/buttons.module.css';
+
 
 
 const DisplayCars = (props) => {
@@ -89,7 +91,7 @@ const DisplayCars = (props) => {
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
                 type="button"
-                className="px-6 py-3 text-base rounded-md hover:underline dark:bg-gray-900 dark:text-gray-100"
+                className={ secondaryBtnStyle.secondaryBtn + "px-6 py-3 text-base rounded-md hover:underline dark:bg-gray-900 dark:text-gray-100"}
                 onClick={() => {
                   handleFilterByNumber(props.availableCarsToRentInfo.length);
                 }}

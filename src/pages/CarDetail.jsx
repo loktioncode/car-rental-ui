@@ -66,7 +66,7 @@ const CarDetails = (props) => {
               </h1>
 
               {/* / */}
-              <div className="px-2 py-6">
+              <div className={carDetailStyle.carCostBox}>
 
                 <p className={textStyle.subtitleL}>
                   {updateResponseKeyString(selectedCar.TotalCharge).CurrencyCode}{" "}
@@ -116,7 +116,7 @@ const CarDetails = (props) => {
             </div>
 
           </div>
-          <div className="py-10">
+          <div className="py-4 lg:py-10 md:py-15">
             <img
               src={carInfo.PictureURL}
               alt=""

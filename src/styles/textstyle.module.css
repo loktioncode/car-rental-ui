@@ -124,8 +124,33 @@
   padding: 6px;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 890px){
+  .titleXl {
+    font-family: var(--fontFamily);
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 900;
+  }
+
+}
+
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {
+  .subtitleL {
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 800;
+  }
+  
+
+.titleXl {
+  font-family: var(--fontFamily);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+}
+
 
   .subtitleM {
     font-family: var(--fontFamily);
@@ -150,14 +175,12 @@
   }
 }
  
-/* Small screen devices (600px and above) */
-@media only screen and (min-width: 600px) {}
- 
-/* Medium screen devices (768px and above) */
-@media only screen and (min-width: 768px) {}
- 
-/* Big screen devices (889px and above) */
-@media only screen and (min-width: 889px) {}
- 
-/* Extra big screen devices (1200px and above) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 768px) and (max-width: 890px){
+  .subtitleS {
+    font-family: var(--fontFamily);
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: normal;
+  }
+
+}

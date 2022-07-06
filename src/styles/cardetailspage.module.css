@@ -15,7 +15,6 @@
     background-color: transparent;
     border-radius: 8px;
     border: var(--borderContainer);
-    
   }
 
   .infoBox{
@@ -27,6 +26,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+    
 }
 
 .carAttributesBox span {
@@ -37,6 +37,7 @@
    color:  var(--black);
    box-shadow: var(--primaryColor) 0px 10px 20px -50px,
    var(--primaryColor) 0px 6px 8px -5px;
+   border-radius: 8px;
 }
 
 .iconStyle{
@@ -48,35 +49,49 @@
 }
 
 
+.carCostBox{
+  padding: 20px 10px;
+}
+
 
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {
-    .carAttributesBox{
-        padding: 30px;
+    .carDetailBox {
         display: grid;
-        grid-template-columns: 1fr ;
-        grid-gap: 20px;
+        grid-template-columns: 3fr;
+        grid-gap: 5px;
+        box-sizing: border-box;
+        justify-content: center;
+        margin: 0px auto;
+        text-align: center;
+        width: 100%;
+        color: var(--black);
+      
+      }
+      .carAttributesBox{
+        padding: auto 14px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
     }
-}
-
-/* Small screen devices (600px and above) */
-@media only screen and (min-width: 600px) {
-   
-}
-
-/* Medium screen devices (768px and above) */
-@media only screen and (min-width: 768px) {
 
 
 }
-
-/* Big screen devices (889px and above) */
-@media only screen and (min-width: 889px) {
-
+@media only screen and (min-width: 768px) and (max-width: 890px){
+    .carAttributesBox{
+        padding: auto 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
  
- 
-}
 
-/* Extra big screen devices (1200px and above) */
-@media only screen and (min-width: 1200px) {
-}
+    }
+
+    .carCostBox{
+      padding: 10px 5px;
+    }
+    
+  
+  }
+
+
