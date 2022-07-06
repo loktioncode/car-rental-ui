@@ -4,7 +4,17 @@
   padding: 16px auto;
   color: var(--white);
   border-radius: 5px;
-  /* justify-content: center;  */
+  width: 100%;
+  text-decoration: none;
+}
+
+.secondaryBtn {
+  background-color: var(--grey);
+  border: var(--borderContainer);
+  height: 40px;
+  padding: 16px auto;
+  color: var(--defaultTextColor);
+  border-radius: 5px;
   width: 100%;
   text-decoration: none;
 }
