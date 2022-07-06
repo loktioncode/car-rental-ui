@@ -97,10 +97,32 @@
   text-align: center;
 }
 
-.primaryColorText{
+.primaryTextColor{
   color: var(--primaryColor);
 }
 
+.currencyCodeText{
+  font-family: var(--fontFamily);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: normal;
+  display: inline-flex;
+  padding: 10px 6px;
+}
+
+.rentalCostText{
+  font-family: var(--fontFamily);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 900;
+  display: inline-flex;
+  padding: 10px auto;
+
+}
+
+.pad5M{
+  padding: 6px;
+}
 
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {

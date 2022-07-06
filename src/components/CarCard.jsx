@@ -3,9 +3,7 @@ import {
 } from "react-router-dom";
 import textStyle from "../styles/textstyle.module.css";
 import cardStyle from '../styles/carcard.module.css';
-import btnStyle from '../styles/button.module.css';
-
-
+import btnStyle from '../styles/buttons.module.css';
 
 
 const CarCard = (props) => {
@@ -21,16 +19,16 @@ const CarCard = (props) => {
       </div>
 
       <div className={textStyle.textCenter}>
-        <div className={textStyle.primaryColorText}>
+        <div className={textStyle.primaryTextColor}>
           <span className={textStyle.subtitleXL}>
             {props.carName.Name}
           </span>
         </div>
 
-        <p className={cardStyle.currencyCode}>
+        <p className={textStyle.currencyCodeText}>
           {props.carTotalCharges.CurrencyCode}
         </p>
-        <p className={cardStyle.rentalCost}>
+        <p className={textStyle.rentalCostText}>
           {props.carTotalCharges.EstimatedTotalAmount}
         </p>
       </div>

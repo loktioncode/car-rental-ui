@@ -12,22 +12,7 @@
     padding: 40px 20px 0px 40px;
 }
 
-.currencyCode{
-    font-family: var(--fontFamily);
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 600;
-    display: inline-flex;
-    padding: 10px;
-}
 
-.rentalCost{
-    font-family: var(--fontFamily);
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 900;
-    display: inline-flex;
-}
 
 .carInfoBox{
     box-shadow: var(--primaryColor) 0px 10px 20px -50px,
@@ -38,6 +23,10 @@
     padding: 5px 10px;
     background-color: var(--grey);
     margin: 10px 10px;
+}
+
+.carInfoBox p { 
+    width: 100%;
 }
 
   /* For extremely small screen devices (595px and below) */

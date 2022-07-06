@@ -4,6 +4,20 @@ import {
   Link
 } from "react-router-dom";
 
+import carDetailStyle from "../styles/cardetailspage.module.css";
+import textStyle from "../styles/textstyle.module.css";
+import doorIcon from '../assets/Icons/door.svg';
+import bagIcon from '../assets/Icons/bag.svg'
+import fuelIcon from '../assets/Icons/fuel.svg'
+import planeIcon from '../assets/Icons/plane.svg'
+import personIcon from '../assets/Icons/person.svg'
+import snowflakeIcon from '../assets/Icons/snowflake.svg'
+import transmissionIcon from '../assets/Icons/transmission.svg'
+
+
+
+
+
 const CarDetails = (props) => {
   const { carId } = useParams();
   const carsData = props.availableCarsToRentInfo;
@@ -20,9 +34,9 @@ const CarDetails = (props) => {
 
   return (
     <>
-      <ol className="flex overflow-hidden text-gray-700 ">
+      <ol className="flex overflow-hidden ">
         <li className="flex items-center">
-    
+
           <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300 hover:text-violet-600"><span className="ml-1.5 font-medium text-sm"> Home </span></Link>
         </li>
 
@@ -31,75 +45,85 @@ const CarDetails = (props) => {
 
           <button
             className="flex items-center h-10 pl-8 pr-4 text-xs font-medium transition-colors bg-white hover:text-gray-900"
-           
+
           >
             Car Details
           </button>
         </li>
       </ol>
 
-      <a
-        rel="noopener noreferrer"
-        href="/"
-        className="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-violet-400  dark:text-gray-50"
-      >
-        {" "}
-      </a>
+      <section className="p-6">
+        <div className={carDetailStyle.carDetailBox}>
 
-      <section className="p-6 dark:text-gray-100">
-        <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
-          <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-900">
-            <span className="block mb-2 dark:text-violet-400">
-              {selectedCar.Status}
-            </span>
-            <h1 className="text-3xl font-extrabold dark:text-gray-50">
-              {selectedCarName.Name}
-            </h1>
+          <div className={carDetailStyle.infoContainer}>
 
-            {/* / */}
-            <div className="px-2 text-center ">
-
-              <p className="inline-flex text-md ">
-                {updateResponseKeyString(selectedCar.TotalCharge).CurrencyCode}{" "}
-              </p>
-              <p className="inline-flex p-2 text-xl font-bold rounded-md text-violet-300">
-                {updateResponseKeyString(selectedCar.TotalCharge).EstimatedTotalAmount}{" "}
-              </p>
-              <p className="inline-flex text-xs">(estimate total) </p>
-            </div>
-
-            <div className="px-2 ">
-              <span className="uppercase shadow-lg shadow-indigo-500/10 inline-block px-10 py-4 text-sm font-semibold text-gray-200 mr-0 mb-2">
-                {carInfo.PassengerQuantity} Passengers
+            <div className={carDetailStyle.infoBox}>
+              <span className={textStyle.primaryTextColor}>
+                {selectedCar.Status}
               </span>
-              <span className=" uppercase shadow-lg shadow-indigo-500/10 inline-block px-10 py-4 text-sm font-semibold text-gray-200 mr-1 mb-2">
-                {carInfo.DoorCount} Doors
-              </span>
+              <h1 className={`${textStyle.titleXl} ${textStyle.primaryTextColor}`}>
+                {selectedCarName.Name}
+              </h1>
 
-              <span className="uppercase shadow-lg shadow-indigo-500/10 inline-block px-10 py-4 text-sm font-semibold text-gray-200 mr-1 mb-2">
-                {carInfo.TransmissionType}
-              </span>
+              {/* / */}
+              <div className="px-2 py-6">
 
-              <span className="uppercase shadow-lg shadow-indigo-500/10 inline-block px-10 py-4 text-sm font-semibold text-gray-200 mr-1 mb-2">
-                {carInfo.FuelType}
-              </span>
-              <span className="uppercase shadow-lg shadow-indigo-500/10 inline-block px-12 py-4 text-sm font-semibold text-gray-200 mr-1 mb-2">
-                {carInfo.AirConditionInd ? "Air Con" : "No AC"}
-              </span>
-            </div>
+                <p className={textStyle.subtitleL}>
+                  {updateResponseKeyString(selectedCar.TotalCharge).CurrencyCode}{" "}
+         
+                  {updateResponseKeyString(selectedCar.TotalCharge).EstimatedTotalAmount}{" "}
+                </p>
+                <p className={`${textStyle.bodyM} ${textStyle.primaryTextColor}`}>(total estimate) </p>
+              </div>
 
-            {/* <button
+              <div className={carDetailStyle.carAttributesBox}>
+            
+             
+                <span className={textStyle.subtitleS}>
+                <img className={carDetailStyle.iconStyle} src={personIcon}></img>
+                  {carInfo.PassengerQuantity} Passengers
+                </span>
+                <span className={textStyle.subtitleS}>
+                <img className={carDetailStyle.iconStyle} src={doorIcon}></img>
+                  {carInfo.DoorCount}
+                </span>
+
+                <span className={textStyle.subtitleS}>
+                <img className={carDetailStyle.iconStyle} src={transmissionIcon}></img>
+
+                  {carInfo.TransmissionType}
+                </span>
+
+                <span className={textStyle.subtitleS}>
+                <img className={carDetailStyle.iconStyle} src={fuelIcon}></img>
+
+                  {carInfo.FuelType}
+                </span>
+                <span className={textStyle.subtitleS}>
+                <img className={carDetailStyle.iconStyle} src={snowflakeIcon}></img>
+
+                  {carInfo.AirConditionInd ? "Air Conditioner" : "No Air Conditioner"}
+                </span>
+              </div>
+
+              {/* <button
               type="button"
               className="w-full py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
             >
               CHOOSE
             </button> */}
+
+            </div>
+
           </div>
-          <img
-            src={carInfo.PictureURL}
-            alt=""
-            className="w-full rounded-md xl:col-span-3 dark:bg-gray-500"
-          />
+          <div className="py-10">
+            <img
+              src={carInfo.PictureURL}
+              alt=""
+              className="w-full rounded-md xl:col-span-3 dark:bg-gray-500"
+            />
+          </div>
+
         </div>
       </section>
     </>
