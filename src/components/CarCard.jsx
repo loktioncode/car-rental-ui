@@ -23,7 +23,6 @@ const CarCard = (props) => {
           <span className={textStyle.subtitleXL }>
               {props.carName.Name}
           </span>
- 
         </div>
 
         <p className={cardStyle.currencyCode}>
@@ -34,13 +33,22 @@ const CarCard = (props) => {
         </p>
       </div>
 
-      <div className="px-3 pb-2 text-center">
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          {props.carInfo.PassengerQuantity} Passengers
-        </span>
+      <div className={ textStyle.textCenter}>
+
+       
+        <div className={ cardStyle.carInfoBox }>
+          <p className={ textStyle.bodyM }>
+            {props.carInfo.PassengerQuantity} Passengers
+          </p>
+        </div>
+
+      
+
         <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
           {props.carInfo.DoorCount} Doors
         </span>
+  
+
         <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
           {props.carInfo.TransmissionType}
         </span>

@@ -28,6 +28,18 @@
     font-weight: bold;
     display: inline-flex;
 }
+
+.carInfoBox{
+    box-shadow: var(--primaryColor) 0px 10px 20px -50px,
+    var(--primaryColor) 0px 6px 8px -5px;
+    display: inline-flex;
+    border-radius: 20px;
+    color: var(--defaultTextColor);
+    padding: 5px 10px;
+    background-color: var(--grey);
+    margin: 10px 10px;
+}
+
   /* For extremely small screen devices (595px and below) */
   @media only screen and (max-width: 595px) {
   
