@@ -3,6 +3,8 @@ import {
 } from "react-router-dom";
 import textStyle from "../styles/textstyle.module.css";
 import cardStyle from '../styles/carcard.module.css';
+import btnStyle from '../styles/button.module.css';
+
 
 
 
@@ -10,7 +12,7 @@ const CarCard = (props) => {
   // console.log("vehicles", props.carInfo);
   return (
     <div className={cardStyle.cardContainer}>
-      <div className={ cardStyle.cardImage}>
+      <div className={cardStyle.cardImage}>
         <img
           className="lg:w-full"
           src={props.carInfo.PictureURL}
@@ -18,10 +20,10 @@ const CarCard = (props) => {
         ></img>
       </div>
 
-      <div className={ textStyle.textCenter }>
-        <div className={textStyle.primaryColorText }>
-          <span className={textStyle.subtitleXL }>
-              {props.carName.Name}
+      <div className={textStyle.textCenter}>
+        <div className={textStyle.primaryColorText}>
+          <span className={textStyle.subtitleXL}>
+            {props.carName.Name}
           </span>
         </div>
 
@@ -33,46 +35,77 @@ const CarCard = (props) => {
         </p>
       </div>
 
-      <div className={ textStyle.textCenter}>
+      <div className={textStyle.textCenter}>
 
-       
-        <div className={ cardStyle.carInfoBox }>
-          <p className={ textStyle.bodyM }>
+
+        <div className={cardStyle.carInfoBox}>
+          <p className={textStyle.bodyM}>
             {props.carInfo.PassengerQuantity} Passengers
           </p>
         </div>
 
-      
 
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          {props.carInfo.DoorCount} Doors
-        </span>
-  
+        <div className={cardStyle.carInfoBox}>
+          <p className={textStyle.bodyM}>
+            {props.carInfo.DoorCount} Doors
+          </p>
+        </div>
 
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          {props.carInfo.TransmissionType}
-        </span>
 
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          {props.carInfo.AirConditionInd ? "AC" : "No AC"}
-        </span>
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          {props.carInfo.FuelType}
-        </span>
-        <span className="shadow-lg shadow-indigo-500/10 inline-block  rounded-full px-3 py-1 text-sm font-normal text-gray-200 mr-2 mb-2">
-          Buggage Quantity #{props.carInfo.BaggageQuantity}
-        </span>
+
+        <div className={cardStyle.carInfoBox}>
+
+          <p className={textStyle.bodyM}>
+            {props.carInfo.TransmissionType}
+          </p>
+
+        </div>
+
+        <div className={cardStyle.carInfoBox}>
+          <p className={textStyle.bodyM}>
+            {props.carInfo.AirConditionInd ? "AC" : "No AC"}
+          </p>
+
+        </div>
+
+
+
+        <div className={cardStyle.carInfoBox}>
+          <p className={textStyle.bodyM}>
+            {props.carInfo.FuelType}
+          </p>
+        </div>
+
+
+        <div className={cardStyle.carInfoBox}>
+          <p className={textStyle.bodyM}>
+            Buggage Quantity #{props.carInfo.BaggageQuantity}
+          </p>
+        </div>
+
       </div>
 
-      <div className="px-8 pt-4 pb-5 grid grid-cols-1 content-center ">
+      <div className="px-8 pt-4 pb-5 grid grid-cols-1">
+
+
         <Link
           to={props.carDetailURL}
-          className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-sm font-medium rounded-md text-violet-800 bg-white hover:bg-violet-50"
+
         >
-          {" "}
-          More Details{" "}
+          <button type="button" className={btnStyle.primaryBtn }>
+            <span className={textStyle.bodyM}>
+              More Details
+            </span>
+          </button>
+
         </Link>
       </div>
+
+  
+        
+   
+
+
     </div>
   );
 };

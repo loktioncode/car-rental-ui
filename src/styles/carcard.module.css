@@ -14,8 +14,8 @@
 
 .currencyCode{
     font-family: var(--fontFamily);
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 26px;
     font-weight: 600;
     display: inline-flex;
     padding: 10px;
@@ -24,8 +24,8 @@
 .rentalCost{
     font-family: var(--fontFamily);
     font-size: 24px;
-    line-height: 28px;
-    font-weight: bold;
+    line-height: 30px;
+    font-weight: 900;
     display: inline-flex;
 }
 

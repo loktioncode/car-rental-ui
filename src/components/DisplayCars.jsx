@@ -84,6 +84,7 @@ const DisplayCars = (props) => {
           </div>
       
         </div>
+
         <div className="flex justify-center mt-5">
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
@@ -99,6 +100,7 @@ const DisplayCars = (props) => {
               ""
             )}
           </div>
+
       </section>
 
   );
