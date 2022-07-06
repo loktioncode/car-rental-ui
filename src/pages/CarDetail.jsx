@@ -55,7 +55,7 @@ const CarDetails = (props) => {
         </li>
       </ol>
         <div className={carDetailStyle.carDetailBox}>
-          
+
         <div className="py-4 lg:py-14 md:py-15">
             <img
               src={carInfo.PictureURL}
@@ -91,11 +91,11 @@ const CarDetails = (props) => {
 
                 <span className={textStyle.subtitleS}>
                   <img className={carDetailStyle.iconStyle} src={personIcon}></img>
-                  {carInfo.PassengerQuantity} Passengers
+                  {carInfo.PassengerQuantity} {" "} Passengers
                 </span>
                 <span className={textStyle.subtitleS}>
                   <img className={carDetailStyle.iconStyle} src={doorIcon}></img>
-                  {carInfo.DoorCount}
+                  {carInfo.DoorCount}{" "} Doors
                 </span>
 
                 <span className={textStyle.subtitleS}>
