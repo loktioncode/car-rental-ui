@@ -1,6 +1,7 @@
 import CarCard from "./CarCard";
-import FilterByVendor from "./Filter";
+import FilterByVendor from "./FilterCarsByVendor";
 import Legend from "./Legend";
+import FilterByPrice from "./FilterCarsByPrice";
 import { updateResponseKeyString } from "../helpers/utils";
 import React, { useContext, useEffect, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
@@ -21,6 +22,27 @@ const DisplayCars = (props) => {
   const availableCarsToRentInfo = props.availableCarsToRentInfo;
 
   const handleFilterByNumber = (number) => setCarsByNumber(availableCarsToRentInfo.slice(0, number));
+
+
+  const filterByLowest = (lowest) => {
+
+    console.log(`Filter byHighest: ${lowest}`);
+  };
+
+  const filterByHighest = (highest) => {
+    console.log(`Filter byHighest: ${highest}`);
+    // if (availableCarsToRentInfo.length !== 0) {
+    //   availableCarsToRentInfo.sort(function (a, b) {
+    //     return (
+    //       parseInt(updateResponseKeyString(b.TotalCharge).EstimatedTotalAmount) -
+    //       parseInt(updateResponseKeyString(a.TotalCharge).EstimatedTotalAmount) 
+         
+    //     );
+    //   });
+    // }
+  
+  };
+
 
   useEffect(() => {
     handleFilterByNumber(6);
@@ -51,11 +73,13 @@ const DisplayCars = (props) => {
                 vendorCode={vendor.Code}
               />
             ))}
+
+
           </div>
         ) : (
           <div>Loading...</div>
         )}
-
+        <FilterByPrice low={filterByLowest} high={filterByHighest} />
         <Legend pickUpTimeData={props.pickUpTimeData} />
         <div className={displayStyle.carsContainer}>
 
@@ -69,8 +93,7 @@ const DisplayCars = (props) => {
                   carInfo={updateResponseKeyString(car.Vehicle)}
                   carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
                   carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
-                    }`}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code}`}
                 />
               ))
               : filteredCarsByVendor.map((car) => (
@@ -79,19 +102,16 @@ const DisplayCars = (props) => {
                   carInfo={updateResponseKeyString(car.Vehicle)}
                   carName={updateResponseKeyString(car.Vehicle.VehMakeModel)}
                   carTotalCharges={updateResponseKeyString(car.TotalCharge)}
-                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code
-                    }`}
+                  carDetailURL={`/rentalcars/${updateResponseKeyString(car.Vehicle).Code}`}
                 />
               ))}
           </div>
-      
-        </div>
 
-        <div className="flex justify-center mt-5">
+          <div className="mt-8">
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
                 type="button"
-                className={ secondaryBtnStyle.secondaryBtn + "px-6 py-3 text-base rounded-md hover:underline dark:bg-gray-900 dark:text-gray-100"}
+                className={ secondaryBtnStyle.secondaryBtn}
                 onClick={() => {
                   handleFilterByNumber(props.availableCarsToRentInfo.length);
                 }}
@@ -102,6 +122,10 @@ const DisplayCars = (props) => {
               ""
             )}
           </div>
+
+      
+        </div>
+
 
       </section>
 

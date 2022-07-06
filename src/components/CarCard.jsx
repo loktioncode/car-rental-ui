@@ -83,7 +83,7 @@ const CarCard = (props) => {
 
       </div>
 
-      <div className="px-8 pt-4 pb-5 grid grid-cols-1">
+      <div className="px-8 pt-4 pb-5 ">
 
 
         <Link

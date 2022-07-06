@@ -7,6 +7,7 @@ export const CarProvider = ({ children }) => {
   const [cars, setCars] = useState(allCars);
   const [filteredCarsByVendor, setFilterCarByVendor] = useState([]);
   const [showFilter, setFilter] = useState(false);
+  
 
   const filterCarsByVendor = (data) => {
     setFilterCarByVendor(data);

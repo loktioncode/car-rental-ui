@@ -13,6 +13,7 @@ import planeIcon from '../assets/Icons/plane.svg'
 import personIcon from '../assets/Icons/person.svg'
 import snowflakeIcon from '../assets/Icons/snowflake.svg'
 import transmissionIcon from '../assets/Icons/transmission.svg'
+import btnStyle from '../styles/buttons.module.css';
 
 
 
@@ -34,10 +35,12 @@ const CarDetails = (props) => {
 
   return (
     <>
-      <ol className="flex overflow-hidden ">
+
+      <section className="p-6">
+      <ol className="flex overflow-hidden py-4 ">
         <li className="flex items-center">
 
-          <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300 hover:text-violet-600"><span className="ml-1.5 font-medium text-sm"> Home </span></Link>
+          <Link to="/" className="flex items-center h-10 px-4 transition-colors bg-gray-300"><span className="ml-1.5 font-medium text-sm"> Home </span></Link>
         </li>
 
         <li className="relative flex items-center">
@@ -51,8 +54,6 @@ const CarDetails = (props) => {
           </button>
         </li>
       </ol>
-
-      <section className="p-6">
         <div className={carDetailStyle.carDetailBox}>
 
           <div className={carDetailStyle.infoContainer}>
@@ -70,48 +71,50 @@ const CarDetails = (props) => {
 
                 <p className={textStyle.subtitleL}>
                   {updateResponseKeyString(selectedCar.TotalCharge).CurrencyCode}{" "}
-         
+
                   {updateResponseKeyString(selectedCar.TotalCharge).EstimatedTotalAmount}{" "}
                 </p>
                 <p className={`${textStyle.bodyM} ${textStyle.primaryTextColor}`}>(total estimate) </p>
               </div>
 
               <div className={carDetailStyle.carAttributesBox}>
-            
-             
+
+
                 <span className={textStyle.subtitleS}>
-                <img className={carDetailStyle.iconStyle} src={personIcon}></img>
+                  <img className={carDetailStyle.iconStyle} src={personIcon}></img>
                   {carInfo.PassengerQuantity} Passengers
                 </span>
                 <span className={textStyle.subtitleS}>
-                <img className={carDetailStyle.iconStyle} src={doorIcon}></img>
+                  <img className={carDetailStyle.iconStyle} src={doorIcon}></img>
                   {carInfo.DoorCount}
                 </span>
 
                 <span className={textStyle.subtitleS}>
-                <img className={carDetailStyle.iconStyle} src={transmissionIcon}></img>
+                  <img className={carDetailStyle.iconStyle} src={transmissionIcon}></img>
 
                   {carInfo.TransmissionType}
                 </span>
 
                 <span className={textStyle.subtitleS}>
-                <img className={carDetailStyle.iconStyle} src={fuelIcon}></img>
+                  <img className={carDetailStyle.iconStyle} src={fuelIcon}></img>
 
                   {carInfo.FuelType}
                 </span>
                 <span className={textStyle.subtitleS}>
-                <img className={carDetailStyle.iconStyle} src={snowflakeIcon}></img>
+                  <img className={carDetailStyle.iconStyle} src={snowflakeIcon}></img>
 
                   {carInfo.AirConditionInd ? "Air Conditioner" : "No Air Conditioner"}
                 </span>
               </div>
 
-              {/* <button
-              type="button"
-              className="w-full py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
-            >
-              CHOOSE
-            </button> */}
+              <div className="px-8 pt-10 pb-5 ">
+                <button type="button" className={btnStyle.primaryBtn}>
+                  <span className={textStyle.bodyM}>
+                    CONTINUE
+                  </span>
+                </button>
+              </div>
+
 
             </div>
 
@@ -120,7 +123,7 @@ const CarDetails = (props) => {
             <img
               src={carInfo.PictureURL}
               alt=""
-              className="w-full rounded-md xl:col-span-3 dark:bg-gray-500"
+              className="w-full object-cover rounded-md xl:col-span-3 dark:bg-gray-500"
             />
           </div>
 

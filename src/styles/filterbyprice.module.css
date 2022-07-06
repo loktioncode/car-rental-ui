@@ -1,0 +1,18 @@
+.filterBox{
+
+}
+
+form.filterBox select{
+    background-color:transparent !important;
+}
+
+  form.filterBox select:after {
+    content: url('../assets/Icons/angle-down.svg');
+    font-size: 50px;
+    line-height: 23px;
+    padding-right: 2px;
+    font-weight: bold;
+    background-color: var(--black);
+    color: var(--primaryTextColor);
+    border-radius: 10px;
+  }
