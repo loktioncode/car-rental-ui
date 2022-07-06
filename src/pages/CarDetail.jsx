@@ -55,6 +55,15 @@ const CarDetails = (props) => {
         </li>
       </ol>
         <div className={carDetailStyle.carDetailBox}>
+          
+        <div className="py-4 lg:py-14 md:py-15">
+            <img
+              src={carInfo.PictureURL}
+              alt=""
+              className=""
+            />
+          </div>
+
 
           <div className={carDetailStyle.infoContainer}>
 
@@ -119,14 +128,7 @@ const CarDetails = (props) => {
             </div>
 
           </div>
-          <div className="py-4 lg:py-10 md:py-15">
-            <img
-              src={carInfo.PictureURL}
-              alt=""
-              className="w-full object-cover rounded-md xl:col-span-3 dark:bg-gray-500"
-            />
-          </div>
-
+     
         </div>
       </section>
     </>
