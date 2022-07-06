@@ -7,38 +7,52 @@
   background-color: var(--primaryColor);
   box-shadow: var(--primaryColor) 0px 20px 40px -10px,
     var(--primaryColor) 0px 12px 22px -12px;
-  margin: 1% 5% auto 5%;
+  /* margin: 1% 5% auto 5%; */
   /* filter: blur(1px); */
 }
-.contentHolder{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    padding: 1.5% 0% 1.5% 0%;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
+
+
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {
-    .pad10{
-        padding: 10px;
+    .pad5{
+        padding: 6px;
      }
     .contentHolder{
         flex-direction: column;
         margin-top: 2%;
         margin-bottom: 2%;
         padding: 6%;
-        font-weight: 600;
-        font-size: 1rem;
+        align-items: flex-start;
     }
 }
 
 /* Small screen devices (600px and above) */
 @media only screen and (min-width: 600px) {
+  .pad5{
+    padding: 6px;
+ }
+  .contentHolder{
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 4%;
+    align-items: flex-start;
+}
+}
+
+/* Medium screen devices (768px to 890px) */
+@media only screen and (min-width: 768px) and (max-width: 890px){
+  .pad5{
+    padding: 6px;
+ }
+  .contentHolder{
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 4%;
+    align-items: flex-start;
+}
+
 }
 
 /* Medium screen devices (768px and above) */
@@ -47,6 +61,16 @@
 
 /* Big screen devices (889px and above) */
 @media only screen and (min-width: 889px) {
+  .contentHolder{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      padding: 1.5% 0% 1.5% 0%;
+  }
 }
 
 /* Extra big screen devices (1200px and above) */

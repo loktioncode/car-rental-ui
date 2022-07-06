@@ -16,7 +16,7 @@ const Legend = (props) => {
           {
             updateResponseKeyString(props.pickUpTimeData.PickUpLocation).Name
               === updateResponseKeyString(props.pickUpTimeData.ReturnLocation).Name ? (
-              <div className={legendStyle.pad10}>
+              <div className={legendStyle.pad5}>
           
                <p className={textStyle.subtitleS}>PickUp / Return Location :</p>
               
@@ -24,22 +24,21 @@ const Legend = (props) => {
               </div>)
 
               : (
-                <>
-                  <div>
+               
+                  <div className={legendStyle.pad5}>
                     <p className={textStyle.subtitleS}>PickUp Location:</p>
                     <span className={textStyle.subtitleM}>{updateResponseKeyString(props.pickUpTimeData.PickUpLocation).Name}</span>
-                  </div>
-                  <div>
+                
                     <p className={textStyle.subtitleS}>Return Location:</p>
                     <span className={textStyle.subtitleM}>{updateResponseKeyString(props.pickUpTimeData.ReturnLocation).Name}</span>
                   </div>
-                </>
+             
 
               )
           }
 
         </div>
-        <div className={legendStyle.pad10}>
+        <div className={legendStyle.pad5}>
 
   
 
@@ -50,7 +49,7 @@ const Legend = (props) => {
 
 
         </div>
-        <div className={legendStyle.pad10}>
+        <div className={legendStyle.pad5}>
 
             <p className={textStyle.subtitleS}>Return Time :</p>
             <span className={textStyle.subtitleM}>{formartDate(props.pickUpTimeData.ReturnDateTime)}</span>
