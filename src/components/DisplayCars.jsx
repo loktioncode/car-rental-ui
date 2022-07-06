@@ -27,16 +27,15 @@ const DisplayCars = (props) => {
     { label: 'Sort by price: high to low', value: '2' }
   ];
 
-
-  const handleFilterByNumber = useCallback((number) => {
-    setCarsByNumber(availableCarsToRentInfo.slice(0, number))
-  }, [availableCarsToRentInfo]);
-
-
   const onPriceFilterChange = (event) => {
     setSortByPrice(event.target.value);
 
   };
+
+
+  const handleFilterByNumber = useCallback((number) => {
+    setCarsByNumber(availableCarsToRentInfo.slice(0, number))
+  }, [availableCarsToRentInfo]);
 
 
   const filterByPrice = useCallback(() => {
