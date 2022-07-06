@@ -2,17 +2,17 @@
 
 }
 
-form.filterBox select{
+div.filterBox select{
     background-color:transparent !important;
-}
-
-  form.filterBox select:after {
-    content: url('../assets/Icons/angle-down.svg');
-    font-size: 50px;
-    line-height: 23px;
+    color: var(--black);
+    font-size: 16px;
+    line-height: 22px;
     padding-right: 2px;
     font-weight: bold;
-    background-color: var(--black);
-    color: var(--primaryTextColor);
     border-radius: 10px;
+    outline:none !important;
+}
+
+div.filterBox select:after {
+    content: url('../assets/Icons/angle-down.svg');
   }
