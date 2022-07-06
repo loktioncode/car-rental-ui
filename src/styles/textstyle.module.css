@@ -1,0 +1,141 @@
+
+.titleXl {
+  font-family: var(--fontFamily);
+  font-size: 48px;
+  line-height: 35px;
+  font-weight: 900;
+}
+
+.titleL {
+  font-family: var(--fontFamily);
+  
+  font-size: 42px;
+  line-height: 57px;
+  font-weight: 600;
+}
+
+.titleM {
+  font-family: var(--fontFamily);
+  
+  font-size: 36px;
+  line-height: 49px;
+  font-weight: normal;
+}
+
+.titleS {
+  font-family: var(--fontFamily);
+  
+  font-size: 32px;
+  line-height: 43px;
+  font-weight: normal;
+}
+
+.subtitleXL {
+  font-family: var(--fontFamily);
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 900;
+}
+
+.subtitleL {
+  font-family: var(--fontFamily);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 800;
+
+}
+
+.subtitleM {
+  font-family: var(--fontFamily);
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
+}
+
+.subtitleS {
+  font-family: var(--fontFamily);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+
+}
+
+.bodyL {
+  font-family: var(--fontFamily);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 900;
+
+}
+
+.bodyM {
+  font-family: var(--fontFamily);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+
+}
+
+.bodyS {
+  font-family: var(--fontFamily);
+  
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: normal;
+
+}
+
+.whiteText{
+  color: var(--white);
+}
+
+.blackText{
+  color: var(--black);
+}
+
+.textCenter{
+  text-align: center;
+}
+
+.primaryColorText{
+  color: var(--primaryColor);
+}
+
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+
+  .subtitleM {
+    font-family: var(--fontFamily);
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+  
+  .subtitleS {
+    font-family: var(--fontFamily);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+  
+  }
+
+  .subtitleXL {
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 900;
+  }
+}
+ 
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {}
+ 
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {}
+ 
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {}
+ 
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {}

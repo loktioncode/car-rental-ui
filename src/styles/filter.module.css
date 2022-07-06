@@ -1,0 +1,27 @@
+
+.vendorLogo {
+  width: 100%;
+  height: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  background-color: transparent;
+  /* margin: 0px 0px 0px 40px; */
+}
+
+.filterBtn:hover {
+  border-bottom: 1px Solid var(--primaryColor);
+  padding-bottom: 1px;
+}
+
+.filterBtn:focus {
+  border-bottom: 3px Solid var(--primaryColor);
+  padding-bottom: 3px;
+}
+
+
+
+
+
+
+
+

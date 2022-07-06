@@ -1,0 +1,75 @@
+@import url("./textstyle.module.css");
+
+.displayCars {
+  position: relative;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.allVendorsBtn {
+  margin-right: 5%;
+}
+
+.carsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+  .filterContainer {
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-evenly;
+  }
+
+  .carGrid {
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-gap: 25px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+  .carGrid {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: 25px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+  .carGrid {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-gap: 25px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {
+}

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --fontFamily: "Open Sans", sans-serif;
+  --primaryColor: #E6356F; 
+  --borderColor: 1px Solid #E6356F;
+  --borderContainer: 1px Solid #C7C7CD;
+  --defaultTextColor: #333333;
+  --black: #333333;
+  --grey: #EFFFFF;
+  --white: #FFFFFF;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,3 +27,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+

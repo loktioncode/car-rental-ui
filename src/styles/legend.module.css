@@ -1,0 +1,78 @@
+.timesContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--primaryColor);
+  /* box-shadow: var(--primaryColor) 0px 20px 40px -10px,
+    var(--primaryColor) 0px 12px 22px -12px; */
+  /* margin: 1% 5% auto 5%; */
+  /* filter: blur(1px); */
+}
+
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+    .pad5{
+        padding: 6px;
+     }
+    .contentHolder{
+        flex-direction: column;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding: 6%;
+        align-items: flex-start;
+    }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+  .pad5{
+    padding: 6px;
+ }
+  .contentHolder{
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 4%;
+    align-items: flex-start;
+}
+}
+
+/* Medium screen devices (768px to 890px) */
+@media only screen and (min-width: 768px) and (max-width: 890px){
+  .pad5{
+    padding: 6px;
+ }
+  .contentHolder{
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 4%;
+    align-items: flex-start;
+}
+
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+  .contentHolder{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      padding: 1.5% 0% 1.5% 0%;
+  }
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {
+}

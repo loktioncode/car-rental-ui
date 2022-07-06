@@ -4,16 +4,18 @@ import Legend from "./Legend";
 import { updateResponseKeyString } from "../helpers/utils";
 import React, { useContext, useEffect, useState } from "react";
 import CarContext from "../car-context-api/CarContext";
+import displayStyle from '../styles/displaycars.module.css';
+
 
 const DisplayCars = (props) => {
-  
+
   const allCars = props.allCars;
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [filteredCarsByVendor, filterCarsByVendor] = filteredByVendor;
   const [showFiltered, setFilter] = filterState;
   const [availableCarsToRentFilteredByNumber, setCarsByNumber] = useState([]);
 
-  const availableVendors = props.availableVendors; 
+  const availableVendors = props.availableVendors;
   const availableCarsToRentInfo = props.availableCarsToRentInfo;
 
   const handleFilterByNumber = (number) => setCarsByNumber(availableCarsToRentInfo.slice(0, number));
@@ -25,17 +27,17 @@ const DisplayCars = (props) => {
   // console.log(props.pickUpTimeData)
 
   return (
-    <>
-      <section className="dark:text-gray-100">
+
+      <section className={displayStyle.displayCars}>
         {availableVendors.length !== 0 ? (
-          <div className="flex -mx-4 space-x-2 overflow-x-auto overflow-y-hidden justify-center flex-nowrap dark:text-gray-100">
+          <div className={displayStyle.filterContainer}>
             <button
               data-test="instructions"
               onClick={() => {
                 filterCarsByVendor([]);
                 setFilter(false);
               }}
-              className="flex items-center flex-shrink-0 px-5 py-2 dark:text-gray-50 border-b-4 active:border-violet-400 hover:bg-violet-600 focus:border-violet-400"
+              className={displayStyle.allVendorsBtn + ' ' + 'semibold'}
             >
               ALL
             </button>
@@ -44,6 +46,7 @@ const DisplayCars = (props) => {
                 key={vendor.Code}
                 vendorName={vendor.Name}
                 allCars={allCars}
+                vendorCode={vendor.Code}
               />
             ))}
           </div>
@@ -52,9 +55,9 @@ const DisplayCars = (props) => {
         )}
 
         <Legend pickUpTimeData={props.pickUpTimeData} />
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className={displayStyle.carsContainer}>
 
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={displayStyle.carGrid}>
             {availableCarsToRentInfo.length !== 0 &&
               !showFiltered &&
               availableCarsToRentFilteredByNumber.length !== 0
@@ -79,7 +82,9 @@ const DisplayCars = (props) => {
                 />
               ))}
           </div>
-          <div className="flex justify-center">
+      
+        </div>
+        <div className="flex justify-center mt-5">
             {availableCarsToRentFilteredByNumber.length !== props.availableCarsToRentInfo.length && !showFiltered ? (
               <button
                 type="button"
@@ -94,9 +99,8 @@ const DisplayCars = (props) => {
               ""
             )}
           </div>
-        </div>
       </section>
-    </>
+
   );
 };
 
