@@ -1,0 +1,27 @@
+.cardContainer {
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--black);
+  overflow: hidden;
+  border: var(--borderColor);
+   box-shadow: var(--black) 0px 20px 40px -10px,
+    var(--black) 0px 12px 22px -12px;
+}
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+
+
+}
+ 
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {}
+ 
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {}
+ 
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {}
+ 
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {}

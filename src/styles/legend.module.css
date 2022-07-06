@@ -5,8 +5,8 @@
   border-radius: 10px;
   color: var(--white);
   background-color: var(--primaryColor);
-  box-shadow: var(--primaryColor) 0px 20px 40px -10px,
-    var(--primaryColor) 0px 12px 22px -12px;
+  /* box-shadow: var(--primaryColor) 0px 20px 40px -10px,
+    var(--primaryColor) 0px 12px 22px -12px; */
   /* margin: 1% 5% auto 5%; */
   /* filter: blur(1px); */
 }

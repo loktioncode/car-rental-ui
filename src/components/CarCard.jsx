@@ -1,12 +1,16 @@
 import {
   Link
 } from "react-router-dom";
+import textStyle from "../styles/textstyle.module.css";
+import cardStyle from '../styles/carcard.module.css';
+
+
 
 const CarCard = (props) => {
   // console.log("vehicles", props.carInfo);
   return (
-    <div className="rounded overflow-hidden shadow-lg dark:bg-slate-900 content-center">
-      <div className="pl-10 pr-10 pt-5">
+    <div className={cardStyle.cardContainer}>
+      <div className={ cardStyle.cardImage}>
         <img
           className="lg:w-full"
           src={props.carInfo.PictureURL}
@@ -14,18 +18,20 @@ const CarCard = (props) => {
         ></img>
       </div>
 
-      <div className="px-6 py-4 text-center ">
-        <div className="font-bold text-2xl mb-2 text-center">
-          {" "}
-          {props.carName.Name}{" "}
+      <div className={ textStyle.textCenter }>
+        <div className={textStyle.primaryColorText }>
+          <span className={textStyle.subtitleXL }>
+              {props.carName.Name}
+          </span>
+ 
         </div>
-        <p className="inline-flex text-md p-0">
-          {props.carTotalCharges.CurrencyCode}{" "}
+
+        <p className={cardStyle.currencyCode}>
+          {props.carTotalCharges.CurrencyCode}
         </p>
-        <p className="inline-flex p-2 text-xl font-bold rounded-md text-violet-300">
-          {props.carTotalCharges.EstimatedTotalAmount}{" "}
+        <p className={cardStyle.rentalCost}>
+          {props.carTotalCharges.EstimatedTotalAmount}
         </p>
-        <p className="inline-flex text-xs">(estimate total) </p>
       </div>
 
       <div className="px-3 pb-2 text-center">
