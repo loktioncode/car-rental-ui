@@ -41,7 +41,7 @@ const App = () => {
       );
     });
 
-    // console.log("sorted rentals desc order >>", availableCarsToRentInfo);
+    // console.log("sorted rentals asc order >>", availableCarsToRentInfo);
   }
 
   if (!cars) {
