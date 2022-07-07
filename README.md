@@ -32,7 +32,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 
-### Deployment
+### Deployment - NODE ENIVIROMENT
 
 ### `npm install -g serve`
 
