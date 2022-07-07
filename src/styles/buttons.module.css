@@ -8,6 +8,16 @@
   text-decoration: none;
 }
 
+.primaryBtn:hover {
+  background-color: var(--white);
+  height: 40px;
+  padding: 16px auto;
+  color: var(--primaryColor);
+  border-radius: 5px;
+  width: 100%;
+  text-decoration: none;
+}
+
 .secondaryBtn {
   background-color: var(--grey);
   border: var(--secondaryColorBorder );
