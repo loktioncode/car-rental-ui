@@ -18,6 +18,15 @@
     padding: 6%;
     align-items: flex-start;
   }
+  
+  .timesContainer {
+  position: relative;
+  top: 0;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--primaryColor);
+}
+  
 }
 
 @media only screen and (min-width: 600px) {
