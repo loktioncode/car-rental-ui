@@ -14,7 +14,7 @@
   .infoContainer{
     background-color: transparent;
     border-radius: 8px;
-    border: var(--primaryColorBorder);
+    border: var(--secondaryColorBorder );
   }
 
   .infoBox{
@@ -30,7 +30,7 @@
 }
 
 .carAttributesBox span {
-   border: var(--primaryColorBorder);
+   border: var(--secondaryColorBorder );
    background-color: var(--grey);
    padding-top: 20px;
    padding-bottom: 20px;

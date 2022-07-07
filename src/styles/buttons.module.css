@@ -10,7 +10,7 @@
 
 .secondaryBtn {
   background-color: var(--grey);
-  border: var(--primaryColorBorder);
+  border: var(--secondaryColorBorder );
   height: 40px;
   padding-left: 36px;
   padding-right: 36px;
@@ -23,7 +23,7 @@
 
 .secondaryBtn:hover {
   background-color: var(--primaryColor);
-  border: var(--secondaryColorBorder);
+  border: var(--primaryColorBorder);
   height: 40px;
   padding-left: 36px;
   padding-right: 36px;
@@ -35,7 +35,7 @@
 
 .secondaryBtn:focus {
   background-color: var(--primaryColor);
-  border: var(--secondaryColorBorder);
+  border: var(--primaryColorBorder);
   height: 40px;
   padding-left: 36px;
   padding-right: 36px;
