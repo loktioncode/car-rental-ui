@@ -15,7 +15,7 @@ const DisplayCars = (props) => {
   const allCars = props.allCars;
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [filteredCarsByVendor, filterCarsByVendor] = filteredByVendor;
-  const [showFiltered, setFilter] = filterState;
+  const [showFiltered, setVendorFilter] = filterState;
   const [availableCarsToRentFilteredByNumber, setCarsByNumber] = useState([]);
 
   const availableVendors = props.availableVendors;
@@ -75,12 +75,12 @@ const DisplayCars = (props) => {
     <section className={displayStyle.displayCars}>
       {availableVendors.length !== 0 ? (
         <div className={displayStyle.filterContainer}>
-          <div className="px-8">
+          <div className="">
             <button
               data-test="instructions"
               onClick={() => {
                 filterCarsByVendor([]);
-                setFilter(false);
+                setVendorFilter(false);
               }}
               className={secondaryBtnStyle.secondaryBtn}
             >
@@ -104,7 +104,8 @@ const DisplayCars = (props) => {
       )}
 
 
-      <FilterByPrice options={options} onChange={onPriceFilterChange} value={sortByPrice} />
+        
+      {  !showFiltered ? <FilterByPrice options={options} onChange={onPriceFilterChange} value={sortByPrice} />: null}
 
 
       <Legend pickUpTimeData={props.pickUpTimeData} />

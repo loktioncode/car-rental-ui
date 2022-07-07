@@ -12,7 +12,7 @@ import alamoLogo from '../assets/Vendors/alamo.svg'
 const FilterByVendor = (props) => {
   const { filteredByVendor, filterState } = useContext(CarContext);
   const [, filterCarsByVendor] = filteredByVendor;
-  const [, setFilter] = filterState;
+  const [, setVendorFilter] = filterState;
 
 
   const allCars = props.allCars;
@@ -32,7 +32,7 @@ const FilterByVendor = (props) => {
   const filterAction = () => {
     findCarsByVendor(props.vendorName);
     filterCarsByVendor(filteredCars);
-    setFilter(true);
+    setVendorFilter(true);
   }
 
   return (
