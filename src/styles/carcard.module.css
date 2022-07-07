@@ -3,7 +3,7 @@
     color: var(--white);
     background-color: var(--black);
     overflow: hidden;
-    border: var(--borderColor);
+    border: var(--secondaryColorBorder);
      box-shadow: var(--black) 0px 20px 40px -10px,
       var(--black) 0px 12px 22px -12px;
   }

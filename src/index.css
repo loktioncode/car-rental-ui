@@ -5,8 +5,8 @@
 :root {
   --fontFamily: "Open Sans", sans-serif;
   --primaryColor: #E6356F; 
-  --borderColor: 1px Solid #E6356F;
-  --borderContainer: 1px Solid #C7C7CD;
+  --secondaryColorBorder: 1px Solid #E6356F;
+  --primaryColorBorder: 1px Solid #C7C7CD;
   --defaultTextColor: #333333;
   --black: #333333;
   --grey: #EFFFFF;
